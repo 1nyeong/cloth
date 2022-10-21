@@ -23,11 +23,30 @@ public class HomeController {
 
     @GetMapping("/notice")
     public String notice(){
-        return "page/notice";
+        return "page/notice";   
     }
-
-    @GetMapping("/productinfo")
-    public String productinfo(){
-        return "page/productinfo";
+    @GetMapping("/productinfo1")
+    public String productinfo1(){
+        return "page/productinfo1";
+    }
+    @GetMapping("/productinfo2")
+    public String productinfo2(){
+        return "page/productinfo2";
+    }
+    @GetMapping("/productinfo3")
+    public String productinfo3(){
+        return "page/productinfo3";
+    }
+    @GetMapping("/productinfo4")
+    public String productinfo4(){
+        return "page/productinfo4";
+    }
+    @GetMapping("/productinfo5")
+    public String productinfo5(){
+        return "page/productinfo5";
+    }
+    @GetMapping("/productinfo6")
+    public String productinfo6(){
+        return "page/productinfo6";
     }
 }
