@@ -23,7 +23,7 @@ public class HomeController {
 
     @GetMapping("/notice")
     public String notice(){
-        return "page/notice";   
+        return "page/notice";
     }
     @GetMapping("/productinfo1")
     public String productinfo1(){
