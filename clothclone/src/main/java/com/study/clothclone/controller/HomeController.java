@@ -8,7 +8,7 @@ public class HomeController {
 
     @GetMapping("/login")
     public String login(){
-        return "account/login";
+        return "login/login";
     }
 
     @GetMapping("/")
