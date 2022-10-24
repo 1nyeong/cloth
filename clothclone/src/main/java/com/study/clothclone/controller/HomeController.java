@@ -25,6 +25,12 @@ public class HomeController {
     public String notice(){
         return "page/notice";
     }
+
+    @GetMapping("/cart")
+    public String cart(){
+        return "cart/cart";
+    }
+
     @GetMapping("/productinfo1")
     public String productinfo1(){
         return "page/productinfo1";
