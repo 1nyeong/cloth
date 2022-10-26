@@ -17,6 +17,7 @@
     justify-content: center;
 }
 
+
 .product_container{
     display: flex;
     justify-content: space-between;
@@ -129,8 +130,9 @@
 .bmenu {
     display: flex;
     justify-content: center;
+    max-height: 58px;
     
-    margin: 100px;
+    margin: 50px;
     line-height: 35px;
 }
 
