@@ -7,17 +7,19 @@
 
     align-items: center;
     
-    margin: 200px;
+    margin: 100px;
 }
 
 .binner > a{
     font-size: 13px;
     color: gray;
     padding: 10px 50px;
+    text-decoration: none;
 }
 
 .binner_address, .binner_copyright,.binner  {
     display: flex;
+    text-decoration: none;
 }
 
 .binner {
@@ -28,6 +30,7 @@
     font-size: 13px;
     color: gray;
     padding: 5px 20px;
+    text-decoration: none;
 }
 
 
@@ -35,4 +38,5 @@
     font-size: 11px;
     color: gray;
     padding: 5px 20px;
+    text-decoration: none;
 }

@@ -1,31 +1,36 @@
 *{
+    outline-width: 0;
     box-sizing: border-box;
-  }
+    -webkit-touch-callout: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
   
   html, body{
     margin: 0; 
     height: 100%;
   }
   
-  ul, ol{
+   ul, ol{
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
   
-  a{
+   a{
     text-decoration: none;
     color: black;
   }
   
   #container{
     display: flex;
-    height: 100%;
   }
   
   .main-container {
     margin-top: 80px;
-    margin-left: 340px;
+    margin-left: 280px;
   
     background-color: white;
   }
