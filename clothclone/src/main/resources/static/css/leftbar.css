@@ -25,7 +25,7 @@
   
   .main-container {
     margin-top: 80px;
-    margin-left: 330px;
+    margin-left: 340px;
   
     background-color: white;
   }
@@ -36,7 +36,7 @@
       align-items: center;
       position: fixed;
       
-      width: 300px;
+      width: 310px;
       height: 100%;
   
       background-color: #eee;

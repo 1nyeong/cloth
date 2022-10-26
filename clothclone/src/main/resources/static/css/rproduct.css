@@ -1,3 +1,7 @@
+*{
+    outline-width: 0;
+}
+
 .product_container{
     display: flex;
     justify-content: space-between;
@@ -72,7 +76,7 @@ div{
 }
 .product_view .btns > .btn1 { 
     width: 400px; 
-    background: #171717; 
+    background: #232323; 
     color: #fff; 
     bottom: 5px;
 }
@@ -113,19 +117,48 @@ div{
     display: flex;
     justify-content: center;
 
-    margin-top: 50px;
-
-    align-items: center;
-    line-height: 45px;
+    margin: 50px;
+    line-height: 35px;
 }
 
 .bmenu > a {
     display: flex;
     justify-content: center;
-    padding: 10px 30px;
+    
+    border-top: 1px solid #232323; 
+    border-bottom: 1px solid #232323;
+    padding: 10px 50px;
     color : #232323;    
     font-size: 18px;
   
     cursor: pointer;
+}
+
+.bmenu a:hover {
+  background: #232323;
+  color: #fff;
+}
+
+.delivery{
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+    font-size: 13px;
+}
+
+.delivery ul{
+    margin: 15px;
     
+}
+
+.delivery li{
+    margin: 10px;
+
+    color: black;
+    font-weight: bold;
+}
+
+.delivery ol{
+    color: gray;
 }

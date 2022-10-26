@@ -1,0 +1,38 @@
+.inner{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    border-top: 1px solid gray; 
+
+    align-items: center;
+    
+    margin: 200px;
+}
+
+.binner > a{
+    font-size: 13px;
+    color: gray;
+    padding: 10px 50px;
+}
+
+.binner_address, .binner_copyright,.binner  {
+    display: flex;
+}
+
+.binner {
+    margin: 15px;
+}
+
+.binner_address > a{
+    font-size: 13px;
+    color: gray;
+    padding: 5px 20px;
+}
+
+
+.binner_copyright > a{
+    font-size: 11px;
+    color: gray;
+    padding: 5px 20px;
+}
