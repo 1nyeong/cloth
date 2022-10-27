@@ -10,11 +10,20 @@ public class HomeController {
     public String login(){
         return "login/login";
     }
+    @GetMapping("/join")
+    public String join(){
+        return "join/join";
+    }
 
     @GetMapping("/")
     public String mainpage(){
         return "page/main";
     }
+    @GetMapping("/rproduct")
+    public String rproduct(){
+        return "productpage/rproduct";
+    }
+
 
     @GetMapping("/Q&A")
     public String qna(){
