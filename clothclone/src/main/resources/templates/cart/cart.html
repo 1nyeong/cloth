@@ -5,70 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/inner.css">
     <link rel="stylesheet" href="/static/css/cart.css">
     <link rel="stylesheet" href="/static/css/leftbar.css">
     </head>
-    <body>		
-    <div id="leftbar"><!-- 회색 배경 고정메뉴 -->
-        <h1>LOGO</h1>
-
-        <div class="menu_top">
-            <a href="#MYPAGE">MYPAGE</a>
-            <a href="cart">CART</a>
-            <a href="login">LOGIN</a>
-            <a href="#JOIN US">JOIN US </a>
-        </div>
-
-        <div class="menu_bottom">
-            <a href="#ORDER">ORDER </a>
-            <a href="#WISH">WISH </a>
-            <a href="notice">NOTICE </a>
-            <a href="Q&A">Q&A</a>
-        </div>
-        <div class="search"><!-- 검색창  -->
-            <input type="text" placeholder=" 검색어 입력">
-            <img class="imagesearch"src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-        </div>
-        <div class="leftbar-center">  <!-- 옷 메뉴  -->
-            <div><!-- NEW -->
-                <a href="#NEW">NEW</a>
+    <body>
+        <div id="container">
+            <div class="leftbar">
+                    <div class="top_logo">
+                        <a href="#LOGO">LOGO</a>
+                    </div>
+                    <div class="menu_top">
+                        <a href="#MYPAGE">MYPAGE</a>
+                        <a href="cart">CART</a>
+                        <a href="login">LOGIN</a>
+                        <a href="#JOIN US">JOIN US </a>
+                    </div>
+                    <div class="menu_bottom">
+                        <a href="#ORDER">ORDER </a>
+                        <a href="#WISH">WISH </a>
+                        <a href="notice">NOTICE </a>
+                        <a href="Q&A">Q&A</a>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                    <div class="main_menu">
+                        <ul>
+                            <li><a href="#NEW">NEW</a></li>
+                            <li><a href="#OUTER">OUTER</a></li>
+                            <li><a href="#TOP">TOP</a></li>
+                            <li><a href="#PANTS">PANTS</a></li>
+                            <li><a href="#SHIRTS">SHIRTS</a></li>
+                            <li><a href="#BAG & SHOES">BAG & SHOES</a></li>
+                            <li><a href="#ACC">ACC</a></li>
+                        </ul>
+                    </div>
+                    <div class="leftbar_info">
+                        <ul class="leftbar_info_top">
+                            <li>T.051-0000-0000</li>
+                            <ol>MONDAY TO FRIDAY AM. 11:00 - PM 05:00</a></ol>
+                            <ol>SAT.SUN.HOLIDAY OFF</a></ol>
+                        </ul>
+                        <ul class="leftbar_info_bottom">
+                            <li>BANK INFO</li>
+                            <ol>은행 123456-12-12345</ol>
+                            <ol>주식회사 LOGO</ol>
+                        </ul>
+                </div>
             </div>
-            <div><!-- OUTER -->
-                <a href="#OUTER">OUTER</a>
-            </div>
-            <div><!-- TOP -->
-                <a href="#TOP#">TOP</a>
-            </div>
-            <div><!-- PANTS -->
-                <a href="#PANTS">PANTS</a>
-            </div>
-            <div><!-- SHIRTS -->
-                <a href="#SHIRTS">SHIRTS</a>
-            </div>
-            <div><!-- BAG & SHOES -->
-                <a href="#BAG & SHOES">BAG & SHOES</a>
-            </div>
-            <div><!-- ACC -->
-                <a href="#ACC">ACC</a>
-            </div>
-        </div>
-        <div class="bottom"><!-- 하단 번호 등 -->
-            <a class="a-1">T.051-0000-0000</a>
-            <a class="a-2">MONDAY TO FRIDAY AM. 11:00 - PM 05:00 </a>
-            <a class="a-2">SAT.SUN.HOLIDAY OFF</a>
-            <a class="a-1">BANK INFO</a>
-            <a class="a-2">은행 123456-12-12345</a>
-            <a class="a-2">주식회사 LOGO </a>
-        </div>
-    </div>
-
-
-
-                            <!-- 장바구니 페이지 -->
-        
-        
-        
-        
         <div class="wrap">
             <div class="contents">
                 <div class="titleArea">
@@ -259,6 +246,24 @@
                         <li>[전체 상품 주문] 버튼을 누르시면 장바구니의 구분없이 선택된 모든 상품에 대한 주문/결제가 이루어집니다.</li>
                         <li>단, 전체 상품을 주문/결제하실 경우, 상품별 무이자할부 혜택을 받으실 수 없습니다.</li>
                     </ol>
+                </div>
+            </div>
+            <div class="inner">
+                <div class="binner">
+                    <a href="#a" class="binner1">HOME</a>
+                    <a href="#a" class="binner2">COMPANY</a>
+                    <a href="#a" class="binner3">AGREEMENTPRIVACY</a>
+                    <a href="#a" class="binner4">POLICY</a>
+                    <a href="#a" class="binner5">GUIDE</a>
+                </div>
+                <div class="binner_address">
+                    <a href="#a" class="binner_address1">COMPANY : LOGO</a>
+                    <a href="#a" class="binner_address2">OWNER  : LOGO</a>
+                    <a href="#a" class="binner_address3">TEL : 051-0000-0000</a>
+                    <a href="#a" class="binner_address4">ADDRESS : 서울 강남</a>
+                </div>
+                <div class="binner_copyright">
+                    <a href="#a" class="binner_copyright">COPYRIGHT (C) ALL RIGHTS RESERVED. DESIGN BY DAYDESIGN</a>
                 </div>
             </div>
 
