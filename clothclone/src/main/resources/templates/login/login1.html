@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div id="main-login">
+        <h1 style="text-align: center;">MEMBER LOGIN</h1>
+        <div id="login-title">
+        </div>
+        <form id="member_form" mrthod="post">
+            <div class="login">
+                <br>
+                <h2 style="text-align: center;">회원 로그인</h2>
+                <br>
+                <fieldset>
+                <label class="id_ePlaceholder" title="아이디">
+                <input id="member_id" name="member_id" placeholder="아이디" value type="text"></label>
+                <label class="pw_ePlaceholder" title="비밀번호">
+                <input id="member_pw" name="member_pw" placeholder="비밀번호" value type="password"></label>
+                <button type="submit" class="login_button" onclick="MemberAction.login"><font color="white" size="5em">LOGIN</font></button>
+                <br>
+                
+                <input id="member_check_save_id" name="check_save_id" type="checkbox">
+                <label for="member_check_save_id">아이디 저장</label><br><br>
+                <ul>
+                    <li>
+                        <a href="" class="find_id_pw">아이디 찾기</a></li>
+                    <li>
+                        <a href="" class="find_id_pw">비밀번호 찾기</a></li>
+                </ul>
+                <ul class="sns">
+                    <li class>
+                        <a href="" onclick="MemberAction.snslogin(naver)">
+                        <img src="https://img.echosting.cafe24.com/design/module/member/login/3374/btn_naver_login.gif" alt="네이버 로그인"style="margin-right:10px;">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" onclick="MemberAction.snslogin(facebook)">
+                        <img src="https://img.echosting.cafe24.com/design/module/member/login/3374/btn_facebook_login.gif" alt="페이스북 로그인" style="margin-left:10px;">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" onclick="MemberAction.snslogin(kakao)">
+                        <img src="https://img.echosting.cafe24.com/design/module/member/login/3374/btn_kakao_login.gif" alt="카카오 로그인" style="margin-left:20px;">
+                        </a>
+                    </li>
+                </ul>
+                <hr class="hr1">
+                <h2 style="text-align:center;">J O I N</h2>
+                <h3>아직도 회원이 아니세요?</h3>
+                <p class="sign_in_text">
+                    회원가입을 하시면 다양하고 특별한 혜택이 기다리고 있습니다.
+                </p>
+                <button type="button" href="" class="sign_button">회원가입</button>
+            </fieldset>
+            </div>
+        </form>
+        
+    </div>
+    
+</body>
+</html>

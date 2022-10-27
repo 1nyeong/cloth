@@ -16,10 +16,17 @@ form{
     position: relative;
     margin: 40px auto;
 }
+h1{
+    text-align: center;
+    margin-bottom: 60px;
+}
+h2{
+    text-align: center;
+}
 #main-login{
-    margin: auto;
     height: 750px;
     width: 564Px;
+    margin-left: 600px;
 }
 .login{
     display: block;
@@ -27,6 +34,9 @@ form{
     height: 650px;
     width: 500px;
     border:2px solid #d7d5d5;
+}
+.memer_login{
+    text-align: center;
 }
 .hr1{
     width: 450px;
@@ -96,4 +106,13 @@ form{
 }
 .sns{
     text-align: center;
+}
+#naver_login{
+    margin-right: 10px;
+}
+#fb_login{
+    margin-left: 10px;
+}
+#kakao_login{
+    margin-left: 20px;
 }
