@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="/static/css/admin/style.css">
+    <link rel="stylesheet" href="/static/css/admin/product_registration.css">
+</head>
+<body>
+<div id="container">
+    <main>
+        <div class="admin">
+            <h1 class="admin-title">ADMIN PRODUCT REGISTRATION</h1>
+            <div class="admin-container">
+                <aside class="admin-menus">
+                    <ul>
+                        <li><a href="">상품 조회</a></li>
+                        <li><a href="">상품 등록</a></li>
+                        <li><a href="">시스템 정보</a></li>
+                        <li><a href="">로그아웃</a></li>
+                    </ul>
+                </aside>
+                <section class="admin-main">
+                    <div class="regist-header">
+                        <select class="product-inputs product-category">
+
+                        </select>
+                        <input type="text" class="product-inputs" placeholder="상품명">
+                        <input type="number" min="100" step="100" class="product-inputs" placeholder="가격">
+                    </div>
+                    <div class="regist-info regist-info-invisible">
+                        <textarea class="product-inputs" placeholder="간단 설명"></textarea>
+                        <textarea class="product-inputs" placeholder="상세 설명"></textarea>
+                        <textarea class="product-inputs" placeholder="추가 설명"></textarea>
+                        <textarea class="product-inputs" placeholder="관리 설명"></textarea>
+                        <textarea class="product-inputs" placeholder="배송 설명"></textarea>
+                    </div>
+                    <button type="button" class="btn regist-button">등록하기</button>
+                    <div class="product-mst">
+                        <div class="list-container">
+                            <div class="option-container">
+                                <ul class="page-number-list">
+                                    <a href=""><li>&#60;</li></a>
+                                    <a href=""><li>1</li></a>
+                                    <a href=""><li>2</li></a>
+                                    <a href=""><li>3</li></a>
+                                    <a href=""><li>4</li></a>
+                                    <a href=""><li>5</li></a>
+                                    <a href=""><li>&#62;</li></a>
+                                </ul>
+                                <div class="search-container">
+                                    <input type="search" class="search-input">
+                                    <button type="button" class="btn search-button">검색</button>
+                                </div>
+                            </div>
+                            <table class="product-mst-list">
+                                <thead>
+                                <tr>
+                                    <th>상품코드</th>
+                                    <th>상품종류</th>
+                                    <th>상품명</th>
+                                    <th>가격</th>
+                                    <th>상세</th>
+                                    <th>추가</th>
+                                    <th>수정</th>
+                                    <th>삭제</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>OUTER</td>
+                                    <td>바하스 MA-1 패딩점퍼(2color)</td>
+                                    <td>94,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>OUTER</td>
+                                    <td>라브 웰론 트렌디 패딩(3color)</td>
+                                    <td>95,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>OUTER</td>
+                                    <td>#퀼링가디건(light padding)</td>
+                                    <td>39,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ACC</td>
+                                    <td>실팔찌 그리고 발찌ver.2</td>
+                                    <td>3,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>TOPS</td>
+                                    <td>USA 기모 오버핏 맨투맨</td>
+                                    <td>39,900원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>TOPS</td>
+                                    <td>USA 올림픽 자수 후리스 반집업</td>
+                                    <td>37,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>TOPS</td>
+                                    <td>GREENDALE.후리스 반집업(3color)</td>
+                                    <td>39,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>TOPS</td>
+                                    <td>소프 양기모 오버핏 후드치(6color)</td>
+                                    <td>39,900원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>KNIT</td>
+                                    <td>언 필로 워셔블 하프넥니트(washable fabric)</td>
+                                    <td>39,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>SHIRTS</td>
+                                    <td>코듀로이 오버핏 셔츠(5color)</td>
+                                    <td>37,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>SHIRTS</td>
+                                    <td>코마 체크남방(3color)</td>
+                                    <td>42,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>PANTS</td>
+                                    <td>퍼팩트 울 롱슬랙스(3color)</td>
+                                    <td>39,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>PANTS</td>
+                                    <td>인스타 트레이닝 기모 와이드팬츠(cotton fabric)</td>
+                                    <td>39,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>PANTS</td>
+                                    <td>말로 코튼 핀턱 와이드팬츠(4color)</td>
+                                    <td>45,000원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>PANTS</td>
+                                    <td>앨번 논페이스 데님팬츠(no.417)</td>
+                                    <td>39,900원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>PANTS</td>
+                                    <td>언더 FW슬림라인 슬랙스(5color)</td>
+                                    <td>39,900원</td>
+                                    <td><button type="button" class="btn">보기</button></td>
+                                    <td><button type="button" class="btn">추가</button></td>
+                                    <td><button type="button" class="btn">수정</button></td>
+                                    <td><button type="button" class="btn">삭제</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="show-option">
+                            <div class="function-container">
+
+                            </div>
+                            <label for="simple-info">간단 설명</label>
+                            <textarea id="simple-info" class="product-inputs"></textarea>
+                            <label for="detail-info">상세 설명</label>
+                            <textarea id="detail-info" class="product-inputs"></textarea>
+                            <label for="option-info">추가 설명</label>
+                            <textarea id="option-info" class="product-inputs"></textarea>
+                            <label for="management-info">관리 설명</label>
+                            <textarea id="management-info" class="product-inputs"></textarea>
+                            <label for="shipping-info">배송 설명</label>
+                            <textarea id="shipping-info" class="product-inputs"></textarea>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</div>
+</body>
+</html>

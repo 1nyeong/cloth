@@ -26,3 +26,4 @@ public class AuthFailureHandler implements AuthenticationFailureHandler {
         }
     }
 }
+

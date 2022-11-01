@@ -5,3 +5,4 @@ public class CustomInternalServerErrorException extends RuntimeException {
         super(message);
     }
 }
+
