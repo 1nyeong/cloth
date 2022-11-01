@@ -4,7 +4,7 @@ registerButton.onclick = () => {
     const accountInputs = document.querySelectorAll(".account-input");
     
     let user = {
-        Name: accountInputs[0].value,
+        name: accountInputs[0].value,
         email: accountInputs[1].value,
         password: accountInputs[2].value
     }
