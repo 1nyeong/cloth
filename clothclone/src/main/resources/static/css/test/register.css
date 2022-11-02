@@ -1,0 +1,215 @@
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+.main-join-form{
+    margin: 50px;
+    margin-left: 600px;
+    width: 900px;
+    height: 1280px;
+    background-color: #fff;
+    border: 1px solid #dee3eb;
+}
+#user-form{
+    width: 840px;
+    height: 1330px;
+    margin: 30px;
+}
+#user-form h3{
+    font-size: 14px;
+    padding: 20px 0 20px 18px;
+    text-align: left;
+    margin: 0;
+}
+#user-form h3 span::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 12px;
+    background-color: #333;
+    margin: 4px 0 0 -16px;
+
+}
+.user-type-table{
+    height: 42px;
+    border-top: 2px solid #dadada;
+    border-bottom: 0.5px solid #ebeaea;
+    margin: 10px 0 0;
+    line-height: 1.5;
+}
+#user-form table{
+    background:  none;
+    margin-bottom: 30px;
+
+}
+.user-type-table table{
+    margin: 10px 0 0;
+    color: #fff;
+    line-height: 1.5;
+}
+.user-type-table td{
+    height: 29px;
+    padding: 8px 10px 7px;
+}
+.user-base-table td{
+    padding: 8px 10px 7px;
+}
+.user-base-table{
+    border-top: 2px solid #dadada;
+}
+.user-base-table td{
+    height: 35px;
+    border-bottom: 0.5px solid #ebeaea;
+}
+.user-base-table input{
+    width: 140px;
+    height: 34px;
+    background-color: #f9f9f9;
+    padding: 0 15px;
+    border: 0;
+    text-align: left;
+    border-radius: 5px;
+}
+.add-information input{
+    width: 80px;
+    height: 34px;
+    background-color: #f9f9f9;
+    padding: 0 15px;
+    border: 0;
+    text-align: left;
+    border-radius: 5px;
+}
+.add-information select{
+    width: 200px;
+    height: 34px;
+    background-color: #f9f9f9;
+    padding: 0 15px;
+    border: 0;
+    text-align: left;
+    border-radius: 5px;
+}
+#addr1{
+    width: 250px;
+    margin: 7px 0 0;
+}
+#addr2{
+    width: 250px;
+    margin: 7px 0 0;
+}
+#hint{
+    width: 280px;
+}
+#hint_answer{
+    width: 450px;
+}
+#postcode1{
+    width: 80px;
+}
+#phone2{
+    width: 50px;  
+}
+#phone3{
+    width: 50px;  
+}
+#mobile2{
+    width: 50px;  
+}
+#mobile3{
+    width: 50px;  
+}
+.user-base-table select{
+    height: 34px;
+    background-color: #f9f9f9;
+    padding: 0 15px;
+    border: 0;
+    text-align: left;
+    border-radius: 5px;
+}
+.add-information{
+    height: 42px;
+    border-top: 2px solid #dadada;
+    margin: 10px 0 0;
+    line-height: 1.5;
+}
+.add-information td {
+    height: 50px;
+    border-bottom: 0.5px solid #ebeaea;
+}
+#birth-year{
+    width: 50px;
+}
+#birth-month{
+    width: 50px;
+}
+#birth-day{
+    width: 50px;
+}
+.content-scrolltable{
+    color: #747474;
+    font-size: 12px;
+    height: 95px;
+    border: 1px solid #dbdbdb;
+    padding: 18px;
+    overflow-y: scroll;
+}
+.check{
+    margin-top: 5px;
+    font-size: 11px;
+    text-align: right;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+#join-button{
+    width: 90px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.agree_base_chk{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #99999999;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+    top: 4px;
+
+    background-image: url(/static/images/check_gray.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+#agreeAllCheckbox:checked + .agree_base_chk{
+    background-color: #333;
+    border-color: #333;
+    background-image: url(/static/images/check_white.png);
+
+}
+#agreeAllCheckbox{
+    position: absolute;
+    left: -999em;
+}
+
+#agree-service-check0{
+    cursor: pointer;
+}
+#agree-service-check1{
+    cursor: pointer;
+}
+#agree-service-check2{
+    cursor: pointer;
+}
+#agree-service-check3{
+    cursor: pointer;
+}
+.join-button-box{
+    margin: 30px;
+    text-align: center;
+}

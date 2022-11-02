@@ -1,0 +1,111 @@
+main{
+  margin-top: 60px;
+}
+
+.account-title{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    
+    margin: 0px auto;
+}
+
+section{
+  padding: 0px 20px;
+
+  width: 512px;
+}
+
+.account-subtitle{
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(198, 198, 198);
+
+  padding-bottom: 20px;
+
+  font-size: 16px;
+}
+
+.account-content{
+  margin: 20px 0px;
+}
+
+.account-input{
+  margin: 5px 0px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+
+  width: 100%; 
+  
+  border: 1px solid #232323;
+  background: white;
+
+  outline-width: 0;
+}
+
+.find-password-link{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  margin-top: 10px;
+  color: rgb(127, 127, 127);
+}
+
+.account-button{
+  display: inline-block; 
+
+  margin-top: 10px; 
+  line-height: 30px; 
+
+  width: 49.4%; 
+  
+  font-size: 14px; 
+  
+  color: white;
+  background-color: black;
+  text-align: center; 
+}
+
+.errors{
+  margin-bottom: 15px;
+  color: #e74c3c;
+  text-align: center;
+}
+
+.errors-invisible{
+  display: none;
+}
+
+.account-name{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.account-name-half{
+  width: 50%;   
+}
+
+
+.account-name-half:nth-child(1){
+  padding-right: 5px;
+}
+
+.account-name-half:nth-child(2){
+  padding-left: 5px;
+}
+
+.login-return-link{
+  display: flex;
+  justify-content: center;
+  color: rgb(127, 127, 127);
+}
+
+.account-invisible{
+  display: none;
+}
+
