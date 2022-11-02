@@ -27,24 +27,28 @@
 
     <select id="findUserByEmail" parameterType="String" resultMap="user">
         select
-            um.id,
-            um.email,
-            um.password,
-            um.name,
-            um.provider,
-            um.role_id,
-            rm.name as role_name,
-            um.create_date,
-            um.update_date
+        um.id,
+        um.email,
+        um.password,
+        um.name,
+        um.provider,
+        um.role_id,
+        rm.name as role_name,
+        um.create_date,
+        um.update_date
         from
-            user_mst um
-            left outer join role_mst rm on(rm.id = um.role_id)
+        user_mst um
+        left outer join role_mst rm on(rm.id = um.role_id)
         where
-            um.email = #{email}
+        um.email = #{email}
 
     </select>
 
-    <insert id="saveUser" parameterType="com.study.clothclone.domain.User" >
+    <insert id="saveUser"
+            parameterType="com.study.clothclone.domain.User"
+            useGeneratedKeys="true"
+            keyProperty="id"
+    >
         insert into
         user_mst
         values(
@@ -60,3 +64,13 @@
     </insert>
 
 </mapper>
+
+
+
+
+
+
+
+
+
+

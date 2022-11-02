@@ -54,7 +54,6 @@ class PageScroll {
           // console.log("눈에 보이는 영역 높이: " + html.clientHeight);
           // console.log("스크롤의 상단 위치: " + html.scrollTop);
           let scrollStatus = body.offsetHeight - html.clientHeight - html.scrollTop;
-          console.log("현재 스크롤 상태: " + scrollStatus);
           if(scrollStatus > -50 && scrollStatus < 50) {
               const nowPage = CollectionsService.getInstance().collectionsEntity.page;
               CollectionsService.getInstance().collectionsEntity.page = Number(nowPage) + 1;

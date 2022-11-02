@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.study.clothclone.repository.admin.ProductManagementRepository">
+    <resultMap id="product_category" type="com.study.clothclone.domain.ProductCategory">
+        <result property="category_id" column="id"/>
+        <result property="group_id" column="group_id"/>
+        <result property="category_name" column="category_name"/>
+    </resultMap>
+
+    <select id="getCategoryList" resultMap="product_category">
+        select
+            id,
+            group_id,
+            category_name
+        from
+            pdt_category_mst
+    </select>
+
+    <insert id="saveProductMst" parameterType="com.study.clothclone.domain.Product">
+        insert into
+            pdt_mst
+        values(
+            0,
+            #{pdt_name},
+            #{category_id},
+            #{pdt_price},
+            #{pdt_simple_info},
+            #{pdt_detail_info},
+            #{pdt_option_info},
+            #{pdt_management_info},
+            #{pdt_shipping_info},
+            now(),
+            now()
+        )
+    </insert>
+    
+    <select id="getProductMstList" resultType="com.study.clothclone.domain.OptionProductMst">
+        select
+            pm.id as pdt_id,
+            pcm.category_name as category,
+            pm.pdt_name
+        from
+            pdt_mst pm
+            left outer join pdt_category_mst pcm on(pcm.id = pm.category_id)
+    </select>
+
+    <select id="getSizeList" parameterType="Integer" resultType="com.study.clothclone.domain.OptionProductSize">
+        select
+            psd.id as size_id,
+            psm.size_name
+        from
+            pdt_mst pm
+            left outer join pdt_category_mst pcm on(pcm.id = pm.category_id)
+            left outer join pdt_size_dtl psd on(psd.group_id = pcm.group_id)
+            left outer join pdt_size_mst psm on(psm.id = psd.size_id)
+        where
+            pm.id = #{productId}
+    </select>
+
+    <select id="findProductColor"
+            parameterType="com.study.clothclone.domain.ProductDetail"
+            resultType="Integer">
+        select
+            count(*)
+        from
+            pdt_dtl
+        where
+            pdt_id = #{pdt_id}
+        and size_id = #{size_id}
+        and pdt_color = #{pdt_color}
+    </select>
+
+    <insert id="saveProductDtl" parameterType="com.study.clothclone.domain.ProductDetail">
+        insert into
+            pdt_dtl
+        values(
+            0,
+            #{pdt_id},
+            #{size_id},
+            #{pdt_color},
+            #{pdt_stock},
+            now(),
+            now()
+        )
+    </insert>
+    <insert id="saveProductImg" parameterType="java.util.List">
+        insert into
+            pdt_image_mst
+        values
+        <foreach collection="list" item="img" separator=",">
+            (
+                0,
+                #{img.pdt_id},
+                #{img.origin_name},
+                #{img.save_name},
+                now(),
+                now()
+            )
+        </foreach>
+    </insert>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
