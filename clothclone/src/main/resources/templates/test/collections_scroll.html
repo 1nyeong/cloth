@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <Script src="http://code.jquery.com/jquery-latest.min.js"></Script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/leftbar.css">
     <link rel="stylesheet" href="/static/css/inner.css">
-    <title>Main</title>
+    <link rel="stylesheet" href="/static/css/collections_number.css">
 </head>
 <body>
     <div id="container">
@@ -29,7 +30,7 @@
                 <a href="Q&A">Q&A</a>
             </div>
             <div class="search-container">
-                <input type="text" name="leftbarsearch">
+                <input type="text" name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div class="main_menu">
@@ -57,62 +58,9 @@
             </div>
         </div>
         <div class="main-container">
-            <div class="header">NEW ARRIVALS</div>
-                <div class="main">    
-                    <div class="goods_box">
-                        
-                        <img src="/static/images/image3.jpg" class="goods_img">
-                        
-                        <div class="goods_nm">릴스 숏야상(4color)</div>
-                        <div class="goods_price">79,000원</div>
-                        <div class="content">스냅버튼으로 제작된 미니멀한 나일론 숏야상입니다:)</div>
-                    </div>
-
-                        <div class="goods_box">
-                        
-                        <img src="/static/images/image4.jpg" class="goods_img">
-                        
-                        <div class="goods_nm">모먼트 페이퍼 오버핏 셔츠(6color)</div>
-                        <div class="goods_price">42,000원</div>
-                        <div class="content">오버핏중에서도 핏이 좋고 기본컬러들로 나왔습니다,^^</div>
-                    </div>
-
-                        <div class="goods_box">
-                        
-                        <img src="/static/images/image5.jpg" class="goods_img">
-                        
-                        <div class="goods_nm">심플 해비 하찌 버튼가디건(6color)</div>
-                        <div class="goods_price">54,000원</div>
-                        <div class="content">어느정도 두께감이 있는 요즘핫한 카라가디건입니다:)</div>
-                    </div>
-
-                        <div class="goods_box">
-                        
-                        <img src="/static/images/image6.jpg" class="goods_img">
-                        
-                        <div class="goods_nm">피그먼트 워싱 오버셔츠(4color)
-                        </div>
-                        <div class="goods_price">34,000원</div>
-                        <div class="content">흔치않은 피그먼트 워싱의 오버핏셔츠로 유니크한 제품입니다,!</div>
-                    </div>
-
-                        <div class="goods_box">
-                        
-                        <img src="/static/images/image7.jpg" class="goods_img">
-                        
-                        <div class="goods_nm">USA 코튼 이중지 와이드팬츠(4color)</div>
-                        <div class="goods_price">43,000원</div>
-                        <div class="content">탄탄한 USA 코튼 이중지원단입니다 , 강추!!</div>
-                    </div>
-                    <div class="goods_box">
-                        
-                        <img src="/static/images/image8.jpg" class="goods_img">
-                        
-                        <div class="goods_nm">리치 수피마코튼 후드티(6color)</div>
-                        <div class="goods_price">47,000원</div>
-                        <div class="content">수피마코튼으로 부드럽고 깨끗한 안감입니다:)</div>
-                </div>
-            </div>
+            <ul class="collection-products">
+                
+            </ul>
             <div class="inner">
                 <div class="binner">
                     <a href="#a" class="binner1">HOME</a>
@@ -133,5 +81,6 @@
             </div>
         </div>
     </div>
+    <script src="/static/js/product/collections_scroll.js"></script>
 </body>
 </html>

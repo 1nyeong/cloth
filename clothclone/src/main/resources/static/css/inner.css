@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .inner{
     display: flex;
     justify-content: center;
