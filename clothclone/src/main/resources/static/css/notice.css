@@ -155,3 +155,15 @@ table {
     float: right;
     cursor: pointer;
 }
+.button-board{
+    margin-top: 20px;
+    color:white;
+    font-size: 11px;
+    border-radius: 4px;
+    outline:0;
+    border: 0;
+    cursor: pointer;
+    background-color: #5a5a5a;
+    width: 60px;
+    height: 30px;
+}

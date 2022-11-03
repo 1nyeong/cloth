@@ -17,7 +17,7 @@ class CollectionsApi {
       $.ajax({
           async: false,
           type: "get",
-          url: "/api/collections/" + category,
+          url: "/api/" + category,
           data: {
               "page": page
           },
@@ -72,7 +72,7 @@ class CollectionsService {
       if(this.#instance == null) {
           this.#instance = new CollectionsService();
       }
-      return this.#instance;
+      return this.#instance;    
   }
 
   pdtIdList = null;
@@ -100,7 +100,7 @@ class CollectionsService {
               this.getCollections(responseData);
           }else {
               alert("해당 카테고리에 등록된 상품 정보가 없습니다.");
-              location.href = "/collections/all";
+              location.href = "/all";
           }
       }
   }

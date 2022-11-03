@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ProductController {
     private final ProductService productService;
 
-    @GetMapping("/collections/{category}")
+    @GetMapping("/{category}")
     public String loadCollections(@PathVariable String category) {
         return "product/collections_scroll";
     }
