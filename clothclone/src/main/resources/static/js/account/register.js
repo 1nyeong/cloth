@@ -4,7 +4,7 @@ registerButton.onclick = () => {
     const accountInputs = document.querySelectorAll(".account-input");
     
     let user = {
-        name: accountInputs[0].value,
+        Name: accountInputs[0].value,
         email: accountInputs[1].value,
         password: accountInputs[2].value
     }
@@ -20,18 +20,17 @@ registerButton.onclick = () => {
         dataType: "json",                   //json외 text 등을 사용할 수 있지만 json 사용함
         success: (response, textStatus, request) => {              //성공시에 실행될 메소드
             console.log(response);
-            const successURI = request.getResponseHeader("location");
+            const successURI = request.getResponseHeader("Location");
             location.replace(successURI + "?email=" + response.data);
         },
         error: (error) => {                 //실패시에 실행될 메소드
             console.log(error.responseJSON.data);
             loadErrorMessage(error.responseJSON.data);
-
         }
     });
 }
 
-function loadErrorMessage(errors){
+function loadErrorMessage(errors) {
     const errorList = document.querySelector(".errors");
     const errorMsgs = document.querySelector(".error-msgs");
     const errorArray = Object.values(errors);
@@ -40,9 +39,9 @@ function loadErrorMessage(errors){
 
     errorArray.forEach(error => {
         errorMsgs.innerHTML += `
-        <li>${error}<li>
+            <li>${error}</li>
         `;
     });
-
+    
     errorList.classList.remove("errors-invisible");
 }
