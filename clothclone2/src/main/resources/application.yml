@@ -1,0 +1,21 @@
+server:
+  port: 8003
+
+spring:
+  mvc:
+    static-path-pattern: /static/**
+
+  security:
+    user:
+      name: cloth@naver.com
+      password: 1q2w3e4r!
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://database-1.crhyg1f1qb0s.ap-northeast-2.rds.amazonaws.com:3306/cloth
+    username: admin
+    password: 1q2w3e4r
+
+mybatis:
+  mapper-locations:
+    - /mappers/*.xml

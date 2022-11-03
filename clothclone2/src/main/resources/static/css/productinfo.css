@@ -1,0 +1,155 @@
+div{ -webkit-touch-callout: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.product_view { 
+    position:  relative; 
+    padding: 0 0 0 700px; 
+    width: 1100px; 
+    box-sizing: border-box;
+}
+.product_view .img { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    padding: auto;
+}
+.product_view .img .big_img { 
+    position: absolute; 
+    top: 0; 
+    left: 100px; 
+    width: 500px; 
+    height: 650px;
+}
+.product_view .name { 
+    font-size: 26px; 
+    color: #232323; 
+    line-height: 30px;
+} 
+.product_view .sub { 
+    padding: 0 0 16px; 
+    font-size: 20px; 
+    color: #232323; 
+    line-height: 70px;
+}
+.product_view table th { 
+    padding: 7 0 50px; 
+    font-size: 16px; 
+    color: #232323; 
+    text-align: left;
+}  
+.product_view table td { 
+    padding: 7 0 50px; 
+    font-size: 16px; 
+    color: #232323; 
+    text-align: right;
+}
+.product_view .btns { 
+    position:  relative; 
+    box-sizing: border-box; 
+    text-align: center; 
+    line-height: 60px; 
+    top: 10px;
+}
+.product_view .btns > a { 
+    display: inline-block; 
+    width: 184px; 
+    text-align: center; 
+    font-size: 18px; 
+}
+.product_view .btns > .btn1 { 
+    width: 388px; 
+    border: 1px solid #fff; 
+    background: #171717; 
+    color: #fff; 
+    bottom: 5px;
+}
+.product_view .btns > .btn2 { 
+    border: 1px solid #232323; 
+    background: #fff; 
+    color : #232323;
+}
+.product_view .btns > .btn3 { 
+    border: 1px solid #232323; 
+    background: #fff; 
+    color : #232323;
+}
+
+.product_view .tableview { 
+    border-top: 1px solid #232323; 
+    border-bottom: 1px solid #232323;
+    width: 400px;   
+    line-height: 60px;
+}
+.product_view .tablechoice {
+    width: 400px;
+    line-height: 60px;
+}
+.product_view .tablechoice td {
+    text-align: center;
+}
+.product_view .tablechoice .item {
+    text-align: left;
+}
+.product_view .tableprice { 
+    width: 400px;
+    line-height: 60px;
+    border-bottom: 1px solid #232323;
+}
+
+
+ul { 
+    list-style:none;
+    padding-left:0px;
+}
+
+.product_view .quantity input {
+    border: none;
+    text-align: center;
+    width: 30px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.bmenu {
+    float: left; 
+    position:  relative; 
+    box-sizing: border-box; 
+    text-align: center; 
+    font-size: 18px; 
+    top: 110px;  
+    left: 250px;
+    width: 600px;
+    border-top: 1px solid #232323; 
+    border-bottom: 1px solid #232323;
+    line-height: 45px;
+}
+
+.bmenu > a {
+    color : #232323;    
+    padding: 30px; 
+}
+
+
+.menu_top > a{
+    text-decoration: none; 
+    color: black; 
+    padding: 0 5px;
+    font-weight: bold;
+}
+.menu_bottom > a{
+    text-decoration: none; 
+    color: black; 
+    text-align :left;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.product-inputs{
+    width:100px;
+    height:22px;
+}

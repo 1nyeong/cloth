@@ -28,18 +28,19 @@ public class ProductAdminApi {
     @PostMapping("/product")
     public ResponseEntity<?> registerProductMst(@Valid @RequestBody ProductRegisterReqDto productRegisterReqDto,
                                                 BindingResult bindingResult) throws Exception {
-        String name = productRegisterReqDto.getName();
-
-        Random random = new Random();
-
-        for(int i = 0; i < 100; i++) {
-
-            productRegisterReqDto.setCategory(i / 10 + 1);
-            productRegisterReqDto.setName(name + (i + 1));
-            productRegisterReqDto.setPrice((random.nextInt(10) + 1) * 100000);
-            productManagementService.registerMst(productRegisterReqDto);
-
-        }
+//        String name = productRegisterReqDto.getName();
+//
+//        Random random = new Random();
+//
+//        for(int i = 0; i < 100; i++) {
+//
+//            productRegisterReqDto.setCategory(i / 10 + 1);
+//            productRegisterReqDto.setName(name + (i + 1));
+//            productRegisterReqDto.setPrice((random.nextInt(10) + 1) * 100000);
+//            productManagementService.registerMst(productRegisterReqDto);
+//
+//        }
+        productManagementService.registerMst(productRegisterReqDto);
 
         return ResponseEntity.created(null)
                 .body(new CMRespDto<>("Register Successfully", true));

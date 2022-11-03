@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/qna.css">
+    <link rel="stylesheet" href="/static/css/leftbar.css">
+    <link rel="stylesheet" href="/static/css/inner.css">
+    <title>Q&A</title>
+</head>
+<body>
+    <div id="container">
+        <div class="leftbar">
+                <div class="top_logo">
+                    <a href="#LOGO">LOGO</a>
+                </div>
+                <div class="menu_top">
+                    <a href="#MYPAGE">MYPAGE</a>
+                    <a href="cart">CART</a>
+                    <a href="login">LOGIN</a>
+                    <a href="#JOIN US">JOIN US </a>
+                </div>
+                <div class="menu_bottom">
+                    <a href="#ORDER">ORDER </a>
+                    <a href="#WISH">WISH </a>
+                    <a href="notice">NOTICE </a>
+                    <a href="Q&A">Q&A</a>
+                </div>
+                <div class="search-container">
+                    <input type="text" name="leftbarsearch">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="main_menu">
+                    <ul>
+                        <li><a href="#NEW">NEW</a></li>
+                        <li><a href="#OUTER">OUTER</a></li>
+                        <li><a href="#TOP">TOP</a></li>
+                        <li><a href="#PANTS">PANTS</a></li>
+                        <li><a href="#SHIRTS">SHIRTS</a></li>
+                        <li><a href="#BAG & SHOES">BAG & SHOES</a></li>
+                        <li><a href="#ACC">ACC</a></li>
+                    </ul>
+                </div>
+                <div class="leftbar_info">
+                    <ul class="leftbar_info_top">
+                        <li>T.051-0000-0000</li>
+                        <ol>MONDAY TO FRIDAY AM. 11:00 - PM 05:00</a></ol>
+                        <ol>SAT.SUN.HOLIDAY OFF</a></ol>
+                    </ul>
+                    <ul class="leftbar_info_bottom">
+                        <li>BANK INFO</li>
+                        <ol>은행 123456-12-12345</ol>
+                        <ol>주식회사 LOGO</ol>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <header>
+                <div class="main-board">
+                    <div class="main-title">
+                        <div class="path">
+                            <ol>
+                                <li>HOME</li>
+                                <li>></li>
+                                <li>BOARD</li>
+                                <li>></li>
+                                <strong>NOTICE</strong>
+                            </ol>
+                        </div>
+                        <div class="title">
+                            <h2>Q / A</h2>
+                            <p>상품 Q&A입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="notice">
+                    <table class="board_list">
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>ITEM</th>
+                                <th>SUBJECT</th>
+                                <th>NAME</th>
+                                <th>DATE</th>
+                                <th>HIT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>공지</td>
+                                <td> </td>
+                                <td>
+                                    <a href="">★교환/반품 보내시는 방법★</a>
+                                    <span class="txtEm">[100]</span>
+                                </td>
+                                <td>고피플</td>
+                                <td>2022-04-11</td>
+                                <td>13840</td>
+                            </tr>
+                            <tr>
+                                <td>공지</td>
+                                <td> </td>
+                                <td>
+                                    <a href="">★휴대폰결제관련 필독★</a>
+                                    <span class="txtEm">[24]</span>
+                                </td>
+                                <td>고피플</td>
+                                <td>2017-05-18</td>
+                                <td>6380</td>
+                            </tr>
+                            <tr>
+                                <td>공지</td>
+                                <td> </td>
+                                <td>
+                                    <a href="">★우체국 토요일도 배송합니다!★</a>
+                                    <span class="txtEm">[210]</span>
+                                </td>
+                                <td>고피플</td>
+                                <td>2015-11-06</td>
+                                <td>14885</td>
+                            </tr>
+                            <tr>
+                                <td>공지</td>
+                                <td> </td>
+                                <td>
+                                    <a href="">★고사장(모델) 스펙안내★</a>
+                                    <span class="txtEm">[17]</span>
+                                </td>
+                                <td>고피플</td>
+                                <td>2015-10-27</td>
+                                <td>13672</td>
+                            </tr>
+                            <tr>
+                                <td>공지</td>
+                                <td> </td>
+                                <td>
+                                    <a href="">★더 정확한 사이즈 추천을 원한다면!?★</a>
+                                    <span class="txtEm">[133]</span>
+                                </td>
+                                <td>고피플</td>
+                                <td>2015-08-15</td>
+                                <td>18282</td>
+                            </tr>
+                            <tr>
+                                <td>81859</td>
+                                <td class="center">
+                                    <a href="">
+                                        <img src="/static/images/pants.webp" alt="와이드팬츠">
+                                    </a>
+                                </td>
+                                <td class="left-txbreak">
+                                    <a href="">
+                                        <span class="prd_name">S/S 프리미엄 와이드팬츠(5color)</span>
+                                        상품문의
+                                    </a>
+                                    <img src="/static/images/new.png" alt="new">
+                                </td>
+                                <td>
+                                    <img src="/static/images/bro.png" alt="bro">40373908@n
+                                </td>
+                                <td>2022-10-03</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>81858</td>
+                                <td> </td>
+                                <td class="left-txbreak">
+                                    <a href="">교환문의</a>
+                                    <img src="/static/images/new.png" alt="new">
+                                </td>
+                                <td>
+                                    <img src="/static/images/bro.png" alt="bro">김원미
+                                </td>
+                                <td>2022-10-02</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>81857</td>
+                                <td class="center">
+                                    <a href="">
+                                        <img src="/static/images/oeverfit-shirt.png" alt="오버핏셔츠">
+                                    </a>
+                                </td>
+                                <td class="left-txbreak">
+                                    <a href="">
+                                        <span class="prd_name">굿핏 옥스포드 오버핏 셔츠(2color) (입고지연 10.04(화) 입고예정)</span>
+                                        상품문의
+                                    </a>
+                                    <img src="/static/images/new.png" alt="new">
+                                </td>
+                                <td>
+                                    <img src="/static/images/bro.png" alt="bro">이정우
+                                </td>
+                                <td>2022-10-02</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>81856</td>
+                                <td class="center">
+                                    <a href="">
+                                        <img src="/static/images/standard.jpg" alt="카라니트">
+                                    </a>
+                                </td>
+                                <td class="left-txbreak">
+                                    <a href="">
+                                        <span class="prd_name">#워셔블 스탠다드 카라니트(Good fabric) (오트밀 10.06(목) 입고예정)</span>
+                                        교환문의
+                                    </a>
+                                    <img src="/static/images/new.png" alt="new">
+                                </td>
+                                <td>
+                                    <img src="/static/images/bro.png" alt="bro">김태멘
+                                </td>
+                                <td>2022-10-02</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="content">
+                        <div class="board-button">
+                            <span class="right-write-btn">
+                                <a href="" class="write">글쓰기</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="paging">
+                        <a href=""><img src="/static/images/btn_page_prev.gif" alt="이전 페이지"></a>
+                        <ol>
+                            <li class="xans-record"><a href="" class="this">1</a></li>
+                            <li class="xans-record"><a href="" class="other">2</a></li>
+                            <li class="xans-record"><a href="" class="other">3</a></li>
+                            <li class="xans-record"><a href="" class="other">4</a></li>
+                            <li class="xans-record"><a href="" class="other">5</a></li>
+                            <li class="xans-record"><a href="" class="other">6</a></li>
+                            <li class="xans-record"><a href="" class="other">7</a></li>
+                            <li class="xans-record"><a href="" class="other">8</a></li>
+                            <li class="xans-record"><a href="" class="other">9</a></li>
+                            <li class="xans-record"><a href="" class="other">10</a></li>
+                        </ol>
+                        <a href=""><img src="/static/images/btn_page_next.gif" alt="다음 페이지"></a>
+                    </div>
+                    <div class="board-search">
+                        <p>
+                            <select name="search-date" id="search-date">
+                                <option value="week">일주일</option>
+                                <option value="month">한달</option>
+                                <option value="3-month">세달</option>
+                                <option value="all">전체</option>
+                            </select>
+                            <select name="search-key" id="search-key">
+                                <option value="subject">제목</option>
+                                <option value="content">내용</option>
+                                <option value="writer_name">글쓴이</option>
+                                <option value="member-id">아이디</option>
+                                <option value="nickname">별명</option>
+                            </select>
+                            <input type="search" name="search">
+                            <span class="bt_button">
+                                <a href="#none" class="gray">찾기</a>
+                            </span>
+                        </p>
+                        <div class="img">
+                            <img src="/static/images/talk.png" alt="카카오톡 상담하기">
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div class="inner">
+                <div class="binner">
+                    <a href="#a" class="binner1">HOME</a>
+                    <a href="#a" class="binner2">COMPANY</a>
+                    <a href="#a" class="binner3">AGREEMENTPRIVACY</a>
+                    <a href="#a" class="binner4">POLICY</a>
+                    <a href="#a" class="binner5">GUIDE</a>
+                </div>
+                <div class="binner_address">
+                    <a href="#a" class="binner_address1">COMPANY : LOGO</a>
+                    <a href="#a" class="binner_address2">OWNER  : LOGO</a>
+                    <a href="#a" class="binner_address3">TEL : 051-0000-0000</a>
+                    <a href="#a" class="binner_address4">ADDRESS : 서울 강남</a>
+                </div>
+                <div class="binner_copyright">
+                    <a href="#a" class="binner_copyright">COPYRIGHT (C) ALL RIGHTS RESERVED. DESIGN BY DAYDESIGN</a>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

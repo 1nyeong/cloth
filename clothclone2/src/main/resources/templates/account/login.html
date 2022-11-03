@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/static/css/account/account.css">
+</head>
+
+<body>
+  <main>
+    <div class="login">
+      <h1 class="account-title">LOGO</h1>
+      <div class="account-container">
+        <section class="account-current">
+          <form action="/login" method="post">
+            <h2 class="account-subtitle">MEMBER LOGIN</h2>
+            <th:block th:if="${error == 'auth'}">
+              <div class="errors">
+                <ul>
+                  <li>이메일 또는 비밀번호가 잘못되었습니다.</li>
+                </ul>
+              </div>
+            </th:block>
+            <th:block th:if="${error == 'passwordExpired'}">
+              <div class="errors">
+                <ul>
+                  <li>비밀번호 인증 5회 초과.</li>
+                </ul>
+              </div>
+            </th:block>
+            <input type="email" class="account-input" name="email" th:value="${email}" placeholder="이메일" required>
+            <input type="password" class="account-input" name="password" placeholder="비밀번호" required>
+            <button type="submit" class="account-button">로그인</button>
+            <button type="button" class="account-button">회원가입</button>
+          </form>
+          <a class="find-password-link" href="">비밀번호를 잊으셨나요?</a>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="/static/js/account/login.js"></script>
+</body>
+
+</html>

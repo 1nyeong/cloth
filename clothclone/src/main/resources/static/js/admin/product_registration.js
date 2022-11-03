@@ -58,8 +58,8 @@ class ProductMst {
     }
 }
 
-class CommonApi{
-    getCategoryList(){
+class CommonApi {
+    getCategoryList() {
         let responseResult = null;
 
         $.ajax({
@@ -74,7 +74,8 @@ class CommonApi{
                 console.log(error);
             }
         });
-        return responseResult
+
+        return responseResult;
     }
 }
 
@@ -90,7 +91,7 @@ class ProductApi {
             data: JSON.stringify(productMst),
             dataType: "json",
             success: (response) => {
-                responseResult = response.data;
+                responseData = response.data;
             },
             error: (error) => {
                 console.log(error);
@@ -100,7 +101,7 @@ class ProductApi {
         return responseData;
     }
 
-    getProductListRequest(listRequestParams){
+    getProductListRequest(listRequestParams) {
         let responseData = null;
 
         $.ajax({
@@ -112,12 +113,12 @@ class ProductApi {
             success: (response) => {
                 responseData = response.data;
             },
-            error: (error) =>{
+            error: (error) => {
                 console.log(error);
             }
         })
 
-        return responseData
+        return responseData;
     }
 }
 
@@ -200,10 +201,10 @@ class RegisterEventService {
                 category, name, price, simpleInfo, detailInfo, 
                 optionInfo, managementInfo, shippingInfo);
 
-            const productApi = new ProductApi();
-            if(productApi.createProductRequest(productMst.getObject())){
+            const pegisterApi = new ProductApi();
+            if(pegisterApi.createProductRequest(productMst.getObject())) {
                 alert("상품 등록 완료");
-                location.reload();  
+                location.reload();
             }
         }
     }
@@ -226,17 +227,17 @@ class RegisterService {
         
     }
 
-    getCategoryList(){
+    getCategoryList() {
         const commonApi = new CommonApi();
         const productCategoryList = commonApi.getCategoryList();
 
         const productCategory = document.querySelector(".product-category");
         productCategory.innerHTML = `<option value="none">상품 종류</option>`;
+
         productCategoryList.forEach(category => {
-            productCategory.innerHTML += `
-            <option value="${category.id}">${category.name}</option>
-            `;
+            productCategory.innerHTML += `<option value="${category.id}">${category.name}</option>`;
         })
+
     }
 
     setRegisterHeaderEvent() {
@@ -244,11 +245,11 @@ class RegisterService {
     }
 }
 
-class ListService{
+class ListService {
     static #instance = null;
 
-    getInstance(){
-        if(this.#instance == null){
+    getInstance() {
+        if(this.#instance == null) {
             this.#instance = new ListService();
         }
         return this.#instance;

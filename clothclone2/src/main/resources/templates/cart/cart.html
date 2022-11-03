@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/inner.css">
+    <link rel="stylesheet" href="/static/css/cart.css">
+    <link rel="stylesheet" href="/static/css/leftbar.css">
+    </head>
+    <body>
+        <div id="container">
+            <div class="leftbar">
+                <div class="top_logo">
+                    <a href="#">LOGO</a>
+                </div>
+                <div class="menu_top">
+                    <a href="#MYPAGE">MYPAGE</a>
+                    <a href="cart">CART</a>
+                    <a href="login">LOGIN</a>
+                    <a href="#JOIN US">JOIN US </a>
+                </div>
+                <div class="menu_bottom">
+                    <a href="#ORDER">ORDER </a>
+                    <a href="#WISH">WISH </a>
+                    <a href="notice">NOTICE </a>
+                    <a href="Q&A">Q&A</a>
+                </div>
+                <div class="search-container">
+                    <input type="text" name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="main_menu">
+                    <ul>
+                        <li><a href="#NEW">NEW</a></li>
+                        <li><a href="#OUTER">OUTER</a></li>
+                        <li><a href="#TOP">TOP</a></li>
+                        <li><a href="#PANTS">PANTS</a></li>
+                        <li><a href="#SHIRTS">SHIRTS</a></li>
+                        <li><a href="#BAG & SHOES">BAG & SHOES</a></li>
+                        <li><a href="#ACC">ACC</a></li>
+                    </ul>
+                </div>
+                <div class="leftbar_info">
+                    <ul class="leftbar_info_top">
+                        <li>T.051-0000-0000</li>
+                        <ol>MONDAY TO FRIDAY AM. 11:00 - PM 05:00</a></ol>
+                        <ol>SAT.SUN.HOLIDAY OFF</a></ol>
+                    </ul>
+                    <ul class="leftbar_info_bottom">
+                        <li>BANK INFO</li>
+                        <ol>은행 123456-12-12345</ol>
+                        <ol>주식회사 LOGO</ol>
+                    </ul>
+                </div>
+            </div>
+        <div class="wrap">
+            <div class="contents">
+                <div class="titleArea">
+                    <h2>SHOPPING CART</h2>
+                </div>
+
+                <div class="cart-topbox">
+                     <div class="information">
+                        <p class="cart-tbt"><strong>홍길동</strong>님은, [브라더] 회원입니다.</p>
+                        <ul class="cart-mileage">
+                            <li class="cart-displaynone"><a>가용적립금 : <strong>1,000원</strong></a>
+                                <li ><a>쿠폰 : <strong>0개</strong></a>
+                                </li>
+                            </li>
+                        </ul>
+                     </div>   
+                </div>
+
+                <div class="cart-tbbox">
+                    <ul calss="cart-box">
+                        <li class="selected">
+                        <a>일반상품(1)</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cart-list">
+                    <table class="cart-table">
+                        <form>
+                            <thead>
+                                <tr>
+                                    <td class="cart-listbox"><input type="checkbox"></td>
+                                    <td class="cart-listbox" colspan="2">이미지</td>
+                                    <td class="cart-listbox">상품정보</td>
+                                    <td class="cart-listbox">판매가</td>
+                                    <td class="cart-listbox">수량</td>
+                                    <td class="cart-listbox">적립금</td>
+                                    <td class="cart-listbox">배송비</td>
+                                    <td class="cart-listbox">합계</td>
+                                    <td class="cart-listbox">삭제</td>
+                                </tr>
+                            </thead>
+                        </form>
+                  </div>
+
+                  <div>
+                    <tbody>
+                      <tr>
+                          <td class="cart-chbox">
+                              <input type="checkbox">
+                          </td>
+                              <!-- 옷 이미지 -->
+                        <td class="cart-imgBox">
+                                <img src="/static/images/img1.png" alt="" class="cart-img">
+                        </td>
+          
+                          <td class="cart-product" colspan="2">  
+                              <strong>피그먼트 워싱 오버 셔츠(4color)</strong>
+                              <ul>
+                                  <li class="cart-option">
+                                      <strong class="cart-option-strong">[옵션:네이비 free]</strong>
+                                  </li>
+                              </ul>
+                          </td>
+
+
+                          <td class="cart-price">
+                                <!--금액-->
+                            <strong>34,000원</strong>
+                          </td>
+
+
+                          <td class="cart-number">
+                            <table>
+                                <input type="number" min="1" class="cart-input" >
+                            </table>
+                            <button>변경</button>
+                          </td>
+
+
+
+                          <td class="cart-save">
+                            340원
+                          </td>
+
+
+
+                          <td class="cart-bs">
+                            무료
+                          </td>
+
+
+                          <td class="cart-Psum">
+                            <strong>34,000원</strong>
+                          </td>
+
+
+                          <td class="cart-button">
+                                <button type="button" class="cart-Dbutton">상품삭제</button>
+                          </td>
+                      </tr>
+                  </tbody>
+                </div>
+            
+
+                   
+                </table>
+            </div>
+              
+
+
+
+
+
+
+
+        <div class="cart-tbox">
+            <tbody>
+              <tr class="cart-tfbox">
+                  <td class="cart-text-l">  
+                      <strong>[기본배송]</strong>
+                  </td>
+
+
+                  <td class="cart-fsum">
+                     상품구매금액 34,000원
+                  </td>
+
+
+                  <td  class="cart-fsum">
+                    + 배송비 0 (무료) = 합계: 
+                  </td>
+
+                  <td  class="cart-fsum">
+                    <strong>34,000원</strong>
+                  </td>
+              </tr>
+          </tbody>
+        </div>
+        
+
+
+        <div class="cart-orderBox">
+            <table class="cart-orderBox">
+                <thead>
+                    <tr>
+                        <td class="cart-orderF">총 상품 금액</td>
+                        <td class="cart-orderF">총 배송비</td>
+                        <td class="cart-orderF">결제 예정 금액</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr >
+                        <td class="cart-orderP"><strong> 34,000원 </strong></td>
+                        <td class="cart-orderP"><strong>+ 0원 </strong></td>
+                        <td class="cart-orderP"><strong> 34,000원 </strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="cart-orderBt">
+            <button type="button" class="cart-allOrder">전체상품주문</button>
+            <button type="button" class="cart-checkOrder">선택상품주문</button>
+            <span><button type="button" class="cart-backShop">쇼핑계속하기</button></span>
+        </div>
+
+
+
+    
+            <div class="inner-box">
+                <h3 class="inner-h3">이용안내</h3>
+                <div class="inner">
+                    <h4 class="inner-h4">장바구니 이용안내</h4>
+                    <ol class="inner-item-text">
+                        <li>해외배송 상품과 국내배송 상품은 함께 결제하실 수 없으니 장바구니 별로 따로 결제해 주시기 바랍니다</li>
+                        <li>해외배송 가능 상품의 경우 국내배송 장바구니에 담았다가 해외배송 장바구니로 이동하여 결제하실 수 있습니다.</li>
+                        <li>선택하신 상품의 수량을 변경하시려면 수량변경 후 [변경] 버튼을 누르시면 됩니다.</li>
+                        <li>[쇼핑계속하기] 버튼을 누르시면 쇼핑을 계속 하실 수 있습니다.</li>
+                        <li>장바구니와 관심상품을 이용하여 원하시는 상품만 주문하거나 관심상품으로 등록하실 수 있습니다.</li>
+                        <li>파일첨부 옵션은 동일상품을 장바구니에 추가할 경우 마지막에 업로드 한 파일로 교체됩니다.</li>
+                    </ol>
+                    <h4 class="inner-h4">무이자할부 이용안내</h4>
+                    <ol class="inner-item-text">
+                        <li>상품별 무이자할부 혜택을 받으시려면 무이자할부 상품만 선택하여 [주문하기] 버튼을 눌러 주문/결제 하시면 됩니다.</li>
+                        <li>[전체 상품 주문] 버튼을 누르시면 장바구니의 구분없이 선택된 모든 상품에 대한 주문/결제가 이루어집니다.</li>
+                        <li>단, 전체 상품을 주문/결제하실 경우, 상품별 무이자할부 혜택을 받으실 수 없습니다.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="inner">
+                <div class="binner">
+                    <a href="#a" class="binner1">HOME</a>
+                    <a href="#a" class="binner2">COMPANY</a>
+                    <a href="#a" class="binner3">AGREEMENTPRIVACY</a>
+                    <a href="#a" class="binner4">POLICY</a>
+                    <a href="#a" class="binner5">GUIDE</a>
+                </div>
+                <div class="binner_address">
+                    <a href="#a" class="binner_address1">COMPANY : LOGO</a>
+                    <a href="#a" class="binner_address2">OWNER  : LOGO</a>
+                    <a href="#a" class="binner_address3">TEL : 051-0000-0000</a>
+                    <a href="#a" class="binner_address4">ADDRESS : 서울 강남</a>
+                </div>
+                <div class="binner_copyright">
+                    <a href="#a" class="binner_copyright">COPYRIGHT (C) ALL RIGHTS RESERVED. DESIGN BY DAYDESIGN</a>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

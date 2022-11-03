@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/static/css/account/account.css">
+</head>
+
+<body>
+  <main>
+      <div class="login">
+          <h1 class="account-title">ACCOUNT</h1>
+          <div class="account-container">
+              <section class="account-current">
+                  <h2 class="account-subtitle">신규 회원가입</h2>
+                  <div class="errors errors-invisible">
+                      <ul class="error-msgs">
+                      </ul>
+                  </div>
+                  <div class="account-name">
+                      <div class="account-name-half">
+                          <input type="text" class="account-input" placeholder="이름" required>
+                      </div>
+                  </div>
+                  <input type="email" class="account-input" placeholder="이메일" required>
+                  <input type="password" class="account-input" placeholder="비밀번호" required>
+                  <button type="submit" class="account-button">확인</button>
+                  <a class="login-return-link" href="/account/login">로그인으로 돌아가기</a>
+              </section>
+          </div>
+      </div>
+  </main>
+  <script src="/static/js/account/register.js"></script>
+</body>
+
+</html>
