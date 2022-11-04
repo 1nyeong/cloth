@@ -98,7 +98,7 @@ public class ProductManagementServiceImpl implements ProductManagementService {
             try {
                 if(!resource.exists()){
                     String tempPath = resourceLoader.getResource("classpath:static").getURI().toString();
-                    tempPath = tempPath.substring(tempPath.indexOf("/") + 1);
+                    tempPath =  tempPath.substring(tempPath.indexOf("/") + 1);
 
                     File f = new File(tempPath + "/upload/product");
                     f.mkdirs();
@@ -132,3 +132,4 @@ public class ProductManagementServiceImpl implements ProductManagementService {
         productManagementRepository.saveProductImg(productImgs);
     }
 }
+

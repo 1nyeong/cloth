@@ -235,7 +235,9 @@ class RegisterService {
         productCategory.innerHTML = `<option value="none">상품 종류</option>`;
 
         productCategoryList.forEach(category => {
-            productCategory.innerHTML += `<option value="${category.id}">${category.name}</option>`;
+            productCategory.innerHTML += `
+            <option value="${category.id}">${category.name}</option>
+            `;
         })
 
     }

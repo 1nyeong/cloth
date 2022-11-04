@@ -1,5 +1,6 @@
 package com.study.clothclone.domain;
 
+
 import com.study.clothclone.dto.CollectionListRespDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;

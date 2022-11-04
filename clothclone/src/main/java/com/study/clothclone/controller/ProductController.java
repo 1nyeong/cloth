@@ -23,7 +23,7 @@ public class ProductController {
 
     @GetMapping("/product/{pdtId}")
     public String loadProductDetail(@PathVariable String pdtId) {
-        return "page/product_detail";
+        return "productpage/rproduct";
     }
 
     @GetMapping("/checkout")

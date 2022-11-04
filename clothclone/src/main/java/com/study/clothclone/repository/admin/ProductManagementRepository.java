@@ -19,5 +19,3 @@ public interface ProductManagementRepository {
 
     public int saveProductImg(List<ProductImg> productImgs) throws Exception;
 }
-
-

@@ -18,11 +18,11 @@ public class AuthFailureHandler implements AuthenticationFailureHandler {
                                         AuthenticationException exception) throws IOException, ServletException {
 
         if(exception.getClass() == UsernameNotFoundException.class || exception.getClass() == BadCredentialsException.class) {
-            response.sendRedirect("/account/login?error=auth");
+            response.sendRedirect("/login?error=auth");
         }else if (exception.getClass() == CredentialsExpiredException.class) {
-            response.sendRedirect("/account/login?error=passwordExpired");
+            response.sendRedirect("/login?error=passwordExpired");
         }else{
-            response.sendRedirect("/account/login?error");
+            response.sendRedirect("/login?error");
         }
     }
 }

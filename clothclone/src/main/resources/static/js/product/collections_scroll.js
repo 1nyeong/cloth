@@ -98,9 +98,6 @@ class CollectionsService {
                                               ? responseData[0].productTotalCount / 16
                                               : Math.floor(responseData[0].productTotalCount / 16) + 1;
               this.getCollections(responseData);
-          }else {
-              alert("해당 카테고리에 등록된 상품 정보가 없습니다.");
-              location.href = "/all";
           }
       }
   }

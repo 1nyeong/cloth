@@ -1,10 +1,20 @@
 
-  
   html, body{
     margin: 0; 
     height: 100%;
   }
   
+
+main{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 40px;
+    justify-content: center;
+}
+
+
 
 /* header 영역 */
 
@@ -81,7 +91,7 @@ table {
 }
 
 .notice {
-    padding: 0px 50px;
+    width: 100%;
 }
 
 .board_list {
@@ -163,6 +173,7 @@ table {
     float: right;
     cursor: pointer;
 }
+
 .button-board{
     margin-top: 20px;
     color:white;

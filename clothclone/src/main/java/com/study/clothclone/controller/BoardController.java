@@ -26,9 +26,20 @@ public class BoardController {
     private BoardService boardService;
 
     @PostMapping("/boardlist")
-    public String boardWritePro(Board board, Model model){
+    public String boardWritePro(Board board, Model model, @PageableDefault(page = 0, size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable ){
 
         boardService.write(board);
+
+        Page<Board> list = boardService.boardList(pageable);
+
+        int nowPage = list.getPageable().getPageNumber() + 1;
+        int startPage = Math.max(nowPage - 4, 1);
+        int endPage = Math.min(nowPage + 5, list.getTotalPages());
+
+        model.addAttribute("list",boardService.boardList(pageable));
+        model.addAttribute("nowPage",nowPage);
+        model.addAttribute("startPage",startPage);
+        model.addAttribute("endPage",endPage);
 
         return "page/boardlist";
     }
@@ -57,5 +68,12 @@ public class BoardController {
 
         model.addAttribute("board",boardService.boardView(id));
         return "page/boardview";
+    }
+
+        @GetMapping("/boarddelete")
+    public String boardDelete(Integer id){
+
+        boardService.boardDelete(id);
+        return "redirect:/boardlist";
     }
 }

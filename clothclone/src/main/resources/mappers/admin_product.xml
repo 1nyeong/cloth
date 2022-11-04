@@ -5,13 +5,13 @@
 
 
 <mapper namespace="com.study.clothclone.repository.admin.ProductManagementRepository">
-    <resultMap id="product_category" type="com.study.clothclone.domain.ProductCategory">
+    <resultMap id="Product_category" type="com.study.clothclone.domain.ProductCategory">
         <result property="category_id" column="id"/>
         <result property="group_id" column="group_id"/>
         <result property="category_name" column="category_name"/>
     </resultMap>
 
-    <select id="getCategoryList" resultMap="product_category">
+    <select id="getCategoryList" resultMap="Product_category">
         select
             id,
             group_id,
@@ -37,7 +37,7 @@
             now()
         )
     </insert>
-    
+
     <select id="getProductMstList" resultType="com.study.clothclone.domain.OptionProductMst">
         select
             pm.id as pdt_id,
@@ -62,16 +62,15 @@
     </select>
 
     <select id="findProductColor"
-            parameterType="com.study.clothclone.domain.ProductDetail"
-            resultType="Integer">
+            parameterType="com.study.clothclone.domain.ProductDetail" resultType="Integer">
         select
             count(*)
         from
             pdt_dtl
         where
             pdt_id = #{pdt_id}
-        and size_id = #{size_id}
-        and pdt_color = #{pdt_color}
+            and size_id = #{size_id}
+            and pdt_color = #{pdt_color}
     </select>
 
     <insert id="saveProductDtl" parameterType="com.study.clothclone.domain.ProductDetail">
@@ -105,13 +104,3 @@
 
 
 </mapper>
-
-
-
-
-
-
-
-
-
-

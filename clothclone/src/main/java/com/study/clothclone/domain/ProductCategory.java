@@ -13,10 +13,13 @@ public class ProductCategory {
     private int group_id;
     private String category_name;
 
+
     public CategoryResponseDto toDto() {
         return CategoryResponseDto.builder()
                 .id(category_id)
                 .name(category_name)
                 .build();
     }
+
+
 }

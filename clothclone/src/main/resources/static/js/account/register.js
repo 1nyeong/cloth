@@ -8,7 +8,7 @@ registerButton.onclick = () => {
         email: accountInputs[1].value,
         password: accountInputs[2].value
     }
-
+    
     //JSON.stringify()  ->  js 객체를 JSON문자열로 변환
     //JSON.parse()      ->  JSON문자열을 js 객체로 변환
     $.ajax({

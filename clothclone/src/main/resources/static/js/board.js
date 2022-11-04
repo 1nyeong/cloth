@@ -8,4 +8,4 @@ const writeButton = document.querySelector(".btn-a");
 
 writeButton.onclick = () => {
     location.href = "/board";
-}
+}   

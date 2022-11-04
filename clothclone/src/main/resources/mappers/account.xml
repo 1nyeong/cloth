@@ -44,31 +44,31 @@
 
     </select>
 
-    <insert id="saveUser"
-            parameterType="com.study.clothclone.domain.User"
-    >
+    <insert id="saveUser" parameterType="com.study.clothclone.domain.User" >
         insert into
-        user_mst
+            user_mst
         values(
-        0,
-        #{email},
-        #{password},
-        #{name},
-        #{provider},
-        #{role_id},
-        now(),
-        now()
+            0,
+            #{email},
+            #{password},
+            #{name},
+            #{provider},
+            #{role_id},
+            now(),
+            now()
         )
     </insert>
 
+
+    <update id="updateProvider" parameterType="com.study.clothclone.domain.User">
+        update
+        user_mst
+        set
+        provider = ${provider},
+        update_date = now()
+        where
+        id = #{id}
+    </update>
+
+
 </mapper>
-
-
-
-
-
-
-
-
-
-

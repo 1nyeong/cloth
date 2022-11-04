@@ -12,38 +12,38 @@
     <link rel="stylesheet" href="/static/css/inner.css">
 </head>
 <body>
-    <div id="container">
-        <div class="leftbar">
-            <div class="top_logo">
-                <a>LOGO</a>
-            </div>
-            <div class="menu_top">
-                <a href="mypage" class="mypage">MYPAGE</a>
-                <a href="cart" class="cart">CART</a>
-                <a href="login" class="login">LOGIN</a>
-                <a href="register" class="register">JOIN US</a>
-            </div>
-            <div class="menu_bottom">
-                <a href="#ORDER">ORDER </a>
-                <a href="#WISH">WISH </a>
-                <a href="notice" class="notice">NOTICE</a>
-                <a href="boardlist" class="boardlist">Q&A</a>
-            </div>
-            <div class="search-container">
-                <input type="text" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-            <div class="main_menu">
-                <ul>
-                    <li><a href="all" class="all">ALL</a></li>
-                    <li><a href="outer" class="outer">OUTER</a></li>
-                    <li><a href="top" class="top">TOP</a></li>
-                    <li><a href="pants" class="pants">PANTS</a></li>
-                    <li><a href="shirts" class="shirts">SHIRTS</a></li>
-                    <li><a href="bag&shoes" class="bag&shoes">BAG & SHOES</a></li>
-                    <li><a href="acc" class="acc">ACC</a></li>     
-                </ul>
-            </div>
+        <div id="container">
+            <div class="leftbar">
+                <div class="top_logo">
+                    <a>LOGO</a>
+                </div>
+                <div class="menu_top">
+                    <a href="/mypage" class="leftbar-mypage">MYPAGE</a>
+                    <a href="/cart" class="leftbar-cart">CART</a>
+                    <a href="/login" class="leftbar-login">LOGIN</a>
+                    <a href="/register" class="leftbar-register">JOIN US</a>
+                </div>
+                <div class="menu_bottom">
+                    <a href="#ORDER">ORDER </a>
+                    <a href="#WISH">WISH </a>
+                    <a href="/notice" class="leftbar-notice">NOTICE</a>
+                    <a href="/boardlist" class="leftbar-boardlist">Q&A</a>
+                </div>
+                <div class="search-container">
+                    <input type="text" name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="main_menu">
+                    <ul>
+                        <li><a href="/all">ALL</a></li>
+                        <li><a href="/outer">OUTER</a></li>
+                        <li><a href="/top">TOP</a></li>
+                        <li><a href="/pants"></a>PANTS</a></li>
+                        <li><a href="/shirts">SHIRTS</a></li>
+                        <li><a href="/bag&shoes">BAG & SHOES</a></li>
+                        <li><a href="/acc">ACC</a></li>     
+                    </ul>
+                </div>
                 <div class="leftbar_info">
                     <ul class="leftbar_info_top">
                         <li>T.051-0000-0000</li>
@@ -66,11 +66,11 @@
                             <ol>
                                 <li>HOME</li>
                                 <li>></li>
-                                <li>BOARD</li>
+                                <strong>BOARD</strong>
                             </ol>
                         </div>
                         <div class="title">
-                            <h2>Board</h2>
+                            <h2>BOARD</h2>
                             <p>게시판입니다.</p>
                         </div>
                     </div>
@@ -97,11 +97,11 @@
                             </td>
                         </tr>
                         </tbody>
-                    </table>    
-                    <div class="boardlist-page" th:each="page : ${#numbers.sequence(startPage, endPage)}">
+                    </table>
+                    <th:block class="boardlist-page" th:each="page : ${#numbers.sequence(startPage, endPage)}">
                         <a class="bpage1" th:if="${page != nowPage}" th:href="@{/boardlist(page = ${page - 1})}" th:text="${page}"></a>
                         <a class="bpage2" th:if="${page == nowPage}" th:text="${page}"></a>
-                    </div>
+                    </th:block>
                     <button class="button-board" type="button">글쓰기</button>
                     </tfoot>
                         <div class="board-search">

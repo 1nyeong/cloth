@@ -10,9 +10,9 @@
 .main{
     margin: 0px;
     padding: 0px;
-    padding-left: 80px;
     display: flex;
     flex-wrap: wrap;
+    padding-left: 80px;
     justify-content: center;
 }
 

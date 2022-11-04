@@ -1,6 +1,7 @@
 package com.study.clothclone.config;
 
 import com.study.clothclone.security.AuthFailureHandler;
+import com.study.clothclone.service.PrincipalOauth2Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private final PrincipalOauth2Service principalOauth2Service;
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -24,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.httpBasic().disable();
         http.authorizeRequests()
-                .antMatchers("/account/mypage", "/index", "/checkout")
+                .antMatchers("/mypage", "/checkout")
                 .authenticated()
 //                .antMatchers("/admin/**")
 //                .hasRole("ADMIN")
@@ -38,6 +41,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")            // login page Get요청
                 .loginProcessingUrl("/login")   // login service Post요청
                 .failureHandler(new AuthFailureHandler())
-                .defaultSuccessUrl("/index");
+                .defaultSuccessUrl("/all")
+                .and()
+                .oauth2Login()
+                .loginPage("/login")
+                .userInfoEndpoint()
+                .userService(principalOauth2Service)
+                .and()
+                .defaultSuccessUrl("/all");
     }
 }

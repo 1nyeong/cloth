@@ -1,8 +1,10 @@
 package com.study.clothclone.service.admin;
 
+import com.study.clothclone.domain.Product;
 import com.study.clothclone.dto.admin.*;
 
 import java.util.List;
+
 
 public interface ProductManagementService {
 
