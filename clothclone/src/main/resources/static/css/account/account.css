@@ -124,19 +124,3 @@ section{
 .account-invisible{
   display: none;
 }
-
-.snsAccount-button{
-  display: inline-block; 
-  padding: 5px;
-  margin-top: 10px; 
-  line-height: 30px; 
-
-  width: 49.3%; 
-  
-  font-size: 14px; 
-  
-  border: 1px solid rgb(198, 198, 198);
-  color: rgb(84, 84, 84);
-  background-color: white;
-  text-align: center; 
-}

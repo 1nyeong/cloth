@@ -62,7 +62,6 @@ public class BoardController {
         return "page/boardlist";
     }
 
-
     @GetMapping("/boardview")
     public String boardView(Model model,Integer id){
 
@@ -70,10 +69,5 @@ public class BoardController {
         return "page/boardview";
     }
 
-        @GetMapping("/boarddelete")
-    public String boardDelete(Integer id){
 
-        boardService.boardDelete(id);
-        return "redirect:/boardlist";
-    }
 }

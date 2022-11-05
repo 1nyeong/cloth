@@ -7,11 +7,9 @@
 
 .page-number-list li{
     margin-right: 3px;
-
-    border: 1px solid rgb(198, 198, 198);
     
     width: 17px;
-    font-size: 12px;
+    font-size: 12px;    
     text-align: center;
 }
 
@@ -21,7 +19,11 @@
     padding: 0px 87.5px;
 
     width: 100%;
+
+    margin-top: 80px;
 }
+
+
 
 .collection-product{
     margin-bottom: 25px;
@@ -44,13 +46,32 @@
     width: 100%;
 }
 
+
+
 .product-name, .product-price{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 
 }
 
+.product-hr{
+    margin: 0px;
+}
+
+.product-price {
+    margin-top: 3px;
+    font-size: 11px;
+    color: #555555;
+}
+
+
+
 .product-name{
+    font-size: 12px;
     font-weight: 700;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  
+
 }

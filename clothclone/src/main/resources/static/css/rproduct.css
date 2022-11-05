@@ -11,11 +11,11 @@
 .main{
     margin: 0px;
     padding: 0px;
-    display: flex;
-    flex-wrap: wrap;
+
     padding-left: 80px;
     justify-content: center;
 }
+
 
 
 .product_container{
@@ -27,16 +27,30 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    overflow: auto;
     padding: 0px 20px;
     width: 80%;
     padding-right: 60px;
+    
+}
+
+.product-images img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .product_view{
-    display: flex;
-    flex-direction: column;
+    position: sticky;
+    top: 25%;
+    right: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 0px 15px;
+    width: 400px;
+    height: 600px;
 }
+
+
 
 .product-title {
     margin: 0px 0px 27px;
@@ -62,7 +76,7 @@
 }
 
 
-.product_view .quantity input {
+.quantity input {
     border: none;
     text-align: center;
     width: 30px;
@@ -76,9 +90,7 @@
     height:22px;
 }
 
-.product_view  { 
-    margin-top: 10px; 
-}
+
 .product_view .btns > button { 
     display: inline-block; 
     width: 400px;

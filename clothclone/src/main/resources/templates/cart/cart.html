@@ -157,117 +157,7 @@
                                 <button type="button" class="cart-Dbutton">상품삭제</button>
                           </td>
                       </tr>
-                  </tbody> <tbody>
-                    <tr>
-                        <td class="cart-chbox">
-                            <input type="checkbox">
-                        </td>
-                            <!-- 옷 이미지 -->
-                      <td class="cart-imgBox">
-                              <img src="/static/images/img1.png" alt="" class="cart-img">
-                      </td>
-        
-                        <td class="cart-product" colspan="2">  
-                            <strong>피그먼트 워싱 오버 셔츠(4color)</strong>
-                            <ul>
-                                <li class="cart-option">
-                                    <strong class="cart-option-strong">[옵션:네이비 free]</strong>
-                                </li>
-                            </ul>
-                        </td>
-
-
-                        <td class="cart-price">
-                              <!--금액-->
-                          <strong>34,000원</strong>
-                        </td>
-
-
-                        <td class="cart-number">
-                          <table>
-                              <input type="number" min="1" class="cart-input" >
-                          </table>
-                          <button>변경</button>
-                        </td>
-
-
-
-                        <td class="cart-save">
-                          340원
-                        </td>
-
-
-
-                        <td class="cart-bs">
-                          무료
-                        </td>
-
-
-                        <td class="cart-Psum">
-                          <strong>34,000원</strong>
-                        </td>
-
-
-                        <td class="cart-button">
-                              <button type="button" class="cart-Dbutton">상품삭제</button>
-                        </td>
-                    </tr>
-                </tbody> <tbody>
-                    <tr>
-                        <td class="cart-chbox">
-                            <input type="checkbox">
-                        </td>
-                            <!-- 옷 이미지 -->
-                      <td class="cart-imgBox">
-                              <img src="/static/images/img1.png" alt="" class="cart-img">
-                      </td>
-        
-                        <td class="cart-product" colspan="2">  
-                            <strong>피그먼트 워싱 오버 셔츠(4color)</strong>
-                            <ul>
-                                <li class="cart-option">
-                                    <strong class="cart-option-strong">[옵션:네이비 free]</strong>
-                                </li>
-                            </ul>
-                        </td>
-
-
-                        <td class="cart-price">
-                              <!--금액-->
-                          <strong>34,000원</strong>
-                        </td>
-
-
-                        <td class="cart-number">
-                          <table>
-                              <input type="number" min="1" class="cart-input" >
-                          </table>
-                          <button>변경</button>
-                        </td>
-
-
-
-                        <td class="cart-save">
-                          340원
-                        </td>
-
-
-
-                        <td class="cart-bs">
-                          무료
-                        </td>
-
-
-                        <td class="cart-Psum">
-                          <strong>34,000원</strong>
-                        </td>
-
-
-                        <td class="cart-button">
-                              <button type="button" class="cart-Dbutton">상품삭제</button>
-                        </td>
-                    </tr>
-                </tbody>
+                  </tbody>
                 </div>
             
 
@@ -390,3 +280,34 @@
 
 </body>
 </html>
+
+
+<!-- 
+<aside>
+    <ul class="order-summary">
+        <li class="product-list">
+            <div class="product-info">
+                <div class="product-img">
+                    <img th:src="|/static/upload/product/${data.saveName}|">
+                </div>
+                <div class="product-description">
+                    <h2 class="product-name" th:text="${data.pdtName}"></h2>
+                    <span th:text="|${data.pdtColor} / ${data.sizeName}|"></span>
+                </div>
+            </div>
+            <div class="product-price" th:text="|\${data.pdtPrice}|"></div>
+        </li>
+    </ul>
+    <div class="order-info">
+        <div class="order-price">
+            <h3>총 상품금액</h3><span th:text="|\${data.pdtPrice}|"></span>
+        </div>
+        <div class="order-shipping">
+            <h3>배송비</h3><span>무료배송</span>
+        </div>
+    </div>
+    <div class="order-total">
+        <h2>총 결제금액</h2><strong th:text="|\${data.pdtPrice}|"></strong>
+    </div>
+</aside>
+</div> -->

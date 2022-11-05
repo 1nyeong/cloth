@@ -104,7 +104,6 @@ class CollectionsService {
 
   getCollections(responseData) {
       const collectionProducts = document.querySelector(".collection-products");
-
       responseData.forEach(product => {
           this.pdtIdList.push(product.productId);
           collectionProducts.innerHTML += `
@@ -115,6 +114,7 @@ class CollectionsService {
               <div class="product-name">
                   ${product.productName}
               </div>
+              <hr class="product-hr">
               <div class="product-price">
                   ${product.productPrice}원
               </div>
