@@ -2,7 +2,7 @@ package com.study.clothclone.service;
 
 import com.study.clothclone.domain.User;
 import com.study.clothclone.exception.CustomInternalServerErrorException;
-import com.study.clothclone.repository.AccountRepository;
+import com.study.clothclone.security.repository.AccountRepository;
 import com.study.clothclone.security.PrincipalDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

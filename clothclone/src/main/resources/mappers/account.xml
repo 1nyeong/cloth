@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.study.clothclone.repository.AccountRepository">
+<mapper namespace="com.study.clothclone.security.repository.AccountRepository">
     <resultMap id="role" type="com.study.clothclone.domain.Role">
         <result property="id" column="id"/>
         <result property="name" column="role_name"/>
@@ -44,7 +44,11 @@
 
     </select>
 
-    <insert id="saveUser" parameterType="com.study.clothclone.domain.User" >
+    <insert id="saveUser"
+            parameterType="com.study.clothclone.domain.User"
+            useGeneratedKeys="true"
+            keyProperty="id"
+    >
         insert into
             user_mst
         values(

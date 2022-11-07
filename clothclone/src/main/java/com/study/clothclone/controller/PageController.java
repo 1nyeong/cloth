@@ -11,14 +11,9 @@ public class PageController {
         return "page/collections_scroll";
     }
 
-    @GetMapping("/mypage")
-    public String mypage(){
-        return "page/mypage";
-    }
-
-    @GetMapping("/cart")
+    @GetMapping("/notice")
     public String cart(){
-        return "cart/cart";
+        return "page/notice";
     }
 
 

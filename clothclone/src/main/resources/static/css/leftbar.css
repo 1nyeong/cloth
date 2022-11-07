@@ -53,10 +53,11 @@
     font-size: 25px;
   }
   
-  .menu_top, .menu_bottom{
+  .menu_top{
     display: flex;
     justify-content: center;
     padding: 10px 5px;
+    margin-bottom: 15px;
   
     font-size: 14px;
     text-align: center;

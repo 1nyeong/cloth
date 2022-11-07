@@ -1,4 +1,4 @@
-package com.study.clothclone.repository;
+package com.study.clothclone.security.repository;
 
 import com.study.clothclone.entity.Board;
 import org.springframework.data.jpa.repository.JpaRepository;

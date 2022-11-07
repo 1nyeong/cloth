@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.study.clothclone.repository.admin.ProductManagementRepository">
+<mapper namespace="com.study.clothclone.security.repository.admin.ProductManagementRepository">
     <resultMap id="Product_category" type="com.study.clothclone.domain.ProductCategory">
         <result property="category_id" column="id"/>
         <result property="group_id" column="group_id"/>

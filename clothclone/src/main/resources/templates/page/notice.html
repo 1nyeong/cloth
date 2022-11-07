@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/css/notice.css">
     <link rel="stylesheet" href="/static/css/leftbar.css">
     <link rel="stylesheet" href="/static/css/inner.css">
+    <link rel="stylesheet" href="/static/css/post.css">
     <title>Notice</title>
 </head>
 <body>
@@ -17,16 +18,10 @@
                 <a>LOGO</a> 
             </div>
             <div class="menu_top">
-                <a href="mypage" class="mypage">MYPAGE</a>
-                <a href="cart" class="cart">CART</a>
-                <a href="login" class="login">LOGIN</a>
-                <a href="register" class="register">JOIN US</a>
-            </div>
-            <div class="menu_bottom">
-                <a href="#ORDER">ORDER </a>
-                <a href="#WISH">WISH </a>
-                <a href="notice" class="notice">NOTICE</a>
-                <a href="boardlist" class="boardlist">Q&A</a>
+                <a href="/login" class="login">LOGIN</a>
+                <a href="/register" class="register">JOIN US</a>
+                <a href="/notice" class="leftbar-notice">NOTICE</a>
+                <a href="/boardlist" class="boardlist">Q&A</a>
             </div>
             <div class="search-container">
                 <input type="text" name="search">
@@ -58,25 +53,14 @@
             </div>
         </div>
         <div class="main-container">
-            <header>
-                <div class="main-board">
-                    <div class="main-title">
-                        <div class="path">
-                            <ol>
-                                <li>HOME</li>
-                                <li>></li>
-                                <li>BOARD</li>
-                                <li>></li>
-                                <strong>NOTICE</strong>
-                            </ol>
-                        </div>
-                        <div class="title">
-                            <h2>NOTICE</h2>
-                            <p>공지사항입니다.</p>
-                        </div>
-                    </div>
+            <div class="main-board">
+                <div class="post">
+                    <ul class="post-maintitle">
+                        NOTICE
+                        <li class="post-subtitle">공지사항</li>
+                    </ul>
                 </div>
-            </header>
+            </div>
             <main>
                 <div class="notice">
                     <table class="board_list">
@@ -224,9 +208,6 @@
                                 <a href="" class="gray">찾기</a>
                             </span>
                         </p>
-                        <div class="img">
-                            <img src="/static/images/talk.png" alt="이미지">
-                        </div>
                     </div>
                 </div>
             </main>
