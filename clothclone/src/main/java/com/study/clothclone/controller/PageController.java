@@ -11,11 +11,6 @@ public class PageController {
         return "page/collections_scroll";
     }
 
-    @GetMapping("/notice")
-    public String notice(){
-        return "page/notice";
-    }
-
     @GetMapping("/mypage")
     public String mypage(){
         return "page/mypage";

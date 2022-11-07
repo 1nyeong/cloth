@@ -93,20 +93,20 @@ public class ProductManagementServiceImpl implements ProductManagementService {
         List<ProductImg> productImgs = new ArrayList<ProductImg>();
 
         productImgReqDto.getFiles().forEach(file -> {
-            Resource resource = resourceLoader.getResource("classpath:/static/upload/product");
+            Resource resource = resourceLoader.getResource("classpath:static/upload/product");
             String filePath = null;
 
             try {
                 if(!resource.exists()){
-                    String tempPath = resourceLoader.getResource("classpath:/static").getURI().toString();
-                    tempPath = "/" + tempPath.substring(tempPath.indexOf("/") + 1);
+                    String tempPath = resourceLoader.getResource("classpath:static").getURI().toString();
+                    tempPath = tempPath.substring(tempPath.indexOf("/") + 1);
 
                     File f = new File(tempPath + "/upload/product");
                     f.mkdirs();
                 }
                 filePath = resource.getURI().toString();
 
-                filePath = "/" + filePath.substring(filePath.indexOf("/") + 1);
+                filePath = filePath.substring(filePath.indexOf("/") + 1);
                 System.out.println(filePath);
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -133,4 +133,3 @@ public class ProductManagementServiceImpl implements ProductManagementService {
         productManagementRepository.saveProductImg(productImgs);
     }
 }
-
