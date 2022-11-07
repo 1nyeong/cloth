@@ -26,7 +26,7 @@ public class BoardController {
     private BoardService boardService;
 
     @PostMapping("/boardlist")
-    public String boardWritePro(Board board, Model model, @PageableDefault(page = 0, size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable ){
+    public String boardWritePro(Board board, Model model, @PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable ){
 
         boardService.write(board);
 
@@ -46,7 +46,7 @@ public class BoardController {
 
 
     @GetMapping("/boardlist")
-    public String boardList(Model model, @PageableDefault(page = 0, size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable){
+    public String boardList(Model model, @PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable){
 
         Page<Board> list = boardService.boardList(pageable);
 

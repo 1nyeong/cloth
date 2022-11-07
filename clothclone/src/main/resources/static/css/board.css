@@ -9,10 +9,10 @@
 
 
 .text-text{
-    width: 500px;
+    width: 1000px;
     height: 500px;
-    border-radius: 10px;  
-    margin-bottom: 15px; 
+    resize: none;
+    overflow-y: auto;
 }
 .btn-a{
     color: white;
@@ -60,7 +60,7 @@ th{
     font-size: 12px;
 }
 .btn-a{
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .boardlist-page {

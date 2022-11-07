@@ -1,0 +1,14 @@
+.board-title, .board-name{
+    width: 90%;
+    height: 50px;
+}
+
+.board-content{
+    width: 1000px;
+    height: 500px;
+    vertical-align: top
+}
+
+.bottom-bar{
+    margin-bottom: 40px;
+}

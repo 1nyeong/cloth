@@ -33,28 +33,29 @@
 
     <select id="getProductList" parameterType="hashmap" resultType="com.study.clothclone.domain.CollectionsProduct">
         select
-        pm.id,
-        pm.pdt_name,
-        pm.pdt_price,
-        pim.save_name,
-        pm_cnt.product_total_count
+            pm.id,
+            pm.pdt_name,
+            pm.pdt_price,
+            pim.save_name,
+            pm_cnt.product_total_count,
+            pm.pdt_simple_info
         from
-        pdt_mst pm
-        left outer join pdt_image_mst pim on(pim.pdt_id = pm.id)
-        left outer join (   select count(*) product_total_count
-        from pdt_mst
+            pdt_mst pm
+            left outer join pdt_image_mst pim on(pim.pdt_id = pm.id)
+            left outer join (   select count(*) product_total_count
+            from pdt_mst
         where 1 = 1
-        <if test='category != "all"'>
-            and category_id = (select id from pdt_category_mst where category_name = #{category})
-        </if> ) pm_cnt on(1 = 1)
+            <if test='category != "all"'>
+                and category_id = (select id from pdt_category_mst where category_name = #{category})
+            </if> ) pm_cnt on(1 = 1)
         where
         1 = 1
-        <if test='category != "all"'>
-            and pm.category_id = (select id from pdt_category_mst where category_name = #{category})
-        </if>
-        group by
-        pm.id
-        limit #{index}, 16
+            <if test='category != "all"'>
+                and pm.category_id = (select id from pdt_category_mst where category_name = #{category})
+            </if>
+            group by
+            pm.id
+            limit #{index}, 16
 
     </select>
     <select id="getProduct" resultMap="getProductMst">

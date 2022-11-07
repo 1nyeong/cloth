@@ -104,20 +104,24 @@ class CollectionsService {
 
   getCollections(responseData) {
       const collectionProducts = document.querySelector(".collection-products");
+
       responseData.forEach(product => {
           this.pdtIdList.push(product.productId);
           collectionProducts.innerHTML += `
           <li class="collection-product">
-              <div class="product-img">
-                  <img src="/static/upload/product/${product.mainImg}">
-              </div>
-              <div class="product-name">
-                  ${product.productName}
-              </div>
+            <div class="product-img">
+                <img src="/static/upload/product/${product.mainImg}">
+            </div>
               <hr class="product-hr">
-              <div class="product-price">
-                  ${product.productPrice}원
-              </div>
+            <div class="product-name">
+                ${product.productName}
+            </div>
+            <div class="product-price">
+                ${product.productPrice}원
+            </div>
+            <div class="product-simple">
+                ${product.simpleInfo}
+            </div>
           </li>
           `;
       });

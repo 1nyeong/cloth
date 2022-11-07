@@ -55,7 +55,7 @@ class ProductDetail {
 
     loadProductDetail(responseData) {
         document.querySelector(".product-title").textContent = responseData.pdtName;
-        document.querySelector(".product-price").textContent = "\\" + responseData.pdtPrice;
+        document.querySelector(".product-price").textContent = "₩ " + responseData.pdtPrice +"원";
         document.querySelector(".simple-info").innerHTML = responseData.pdtSimpleInfo;
         document.querySelector(".detail-info").innerHTML = `<strong>PRODUCT DETAILS</strong>
 ${responseData.pdtDetailInfo}`;

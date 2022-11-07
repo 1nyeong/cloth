@@ -23,8 +23,7 @@ class ImportApi {
         const addressDetail = document.querySelector(".address-detail").value;
         const address = addressAll + " " + addressDetail;
         const phone = document.querySelector(".phone-number").value;
-        
-   msg
+
         // IMP.request_pay(param, callback) 결제창 호출
         IMP.request_pay({ // param
             pg: "kakaopay",
@@ -39,13 +38,12 @@ class ImportApi {
             buyer_postcode: zoneCode
         }, function (rsp) { // callback
             if (rsp.success) {
-                
+
             } else {
 
             }
 
         });
-    
     }
 
 }

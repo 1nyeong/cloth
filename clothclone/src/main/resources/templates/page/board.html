@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/static/css/notice.css">
     <link rel="stylesheet" href="/static/css/leftbar.css">
     <link rel="stylesheet" href="/static/css/inner.css">
+    <link rel="stylesheet" href="/static/css/post.css">
 </head>
 <body>
     <div id="container">
@@ -35,13 +36,13 @@
             </div>
             <div class="main_menu">
                 <ul>
-                    <li><a href="all" class="all">ALL</a></li>
-                    <li><a href="outer" class="outer">OUTER</a></li>
-                    <li><a href="top" class="top">TOP</a></li>
-                    <li><a href="pants" class="pants">PANTS</a></li>
-                    <li><a href="shirts" class="shirts">SHIRTS</a></li>
-                    <li><a href="bag&shoes" class="bag&shoes">BAG & SHOES</a></li>
-                    <li><a href="acc" class="acc">ACC</a></li>     
+                    <li><a href="/all" class="all">ALL</a></li>
+                    <li><a href="/outer" class="outer">OUTER</a></li>
+                    <li><a href="/top" class="top">TOP</a></li>
+                    <li><a href="/pants" class="pants">PANTS</a></li>
+                    <li><a href="/shirts" class="shirts">SHIRTS</a></li>
+                    <li><a href="/bag&shoes" class="bag&shoes">BAG & SHOES</a></li>
+                    <li><a href="/acc" class="acc">ACC</a></li>     
                 </ul>
             </div>
             <div class="leftbar_info">
@@ -58,51 +59,38 @@
             </div>
         </div>
         <div class="main-container">
-            <header>
-                <div class="main-board">
-                    <div class="main-title">
-                        <div class="path">
-                            <ol>
-                                <li>HOME</li>
-                                <li>></li>
-                                <li>BOARD</li>
-                            </ol>
-                        </div>
-                        <div class="title">
-                            <h2>Board</h2>
-                            <p>게시판입니다.</p>
-                        </div>
-                    </div>
+            <div class="post">
+                <ul class="post-maintitle">
+                    BOARD
+                    <li class="post-subtitle">게시판</li>
+                </ul>
+            </div>
+            <form action="/boardlist" method="post">
+                <div class="bottom-bar">  
+                    <table class="table-main">
+                        <h5>게시글 작성</h5> 
+                    <tbody class="tbody-main">
+                        <tr>
+                            <th class="write"scope="row">이름 </th>
+                            <td> 
+                                <input name ="name"class="text-input" type="text"placeholder=" 이름을 입력하세요." required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="write"scope="row">옷 종류</th>
+                            <td>
+                                <input name ="title"class="text-input" type="text"placeholder=" 옷종류를 입력하세요." required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="write"scope="row">내용</th>
+                                <td><textarea name ="content"class="text-text"placeholder=" 내용을 입력하세요." required></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <button class="btn-a" type="submit">작성</button>
                 </div>
-            </header>
-            <main>
-                <form action="/boardlist" method="post">
-                    <div class="bottom-bar">  
-                        <table class="table-main">
-                            <h2>게시글 작성</h2> 
-                        <tbody class="tbody-main">
-                            <tr>
-                                <th class="write"scope="row">이름 </th>
-                                <td> 
-                                    <input name ="name"class="text-input" type="text"placeholder=" 이름을 입력하세요." required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="write"scope="row">옷 종류</th>
-                                <td>
-                                    <input name ="title"class="text-input" type="text"placeholder=" 옷종류를 입력하세요." required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="write"scope="row">내용</th>
-                                    <td><textarea name ="content"class="text-text"placeholder=" 내용을 입력하세요." required></textarea>
-                                </td>
-                            </tr>
-                        </table>
-                        <button class="btn-a" type="submit">작성</button>
-                    </div>
-                </form>
-            </main>
+            </form>
             <div class="inner">
                 <div class="binner">
                     <a href="#a" class="binner1">HOME</a>

@@ -1,0 +1,31 @@
+.post{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+
+    text-align: center;
+}
+
+.post-maintitle{
+    font-size: 20px;
+}
+
+.post-subtitle{
+    font-size: 11px;
+}
+
+.boardlist{
+    display: flex;
+    justify-content: center;
+    padding: 10px;  
+    font-size: 14px;
+}
+
+.boardlist > a {
+    padding: 5px 5px;
+}
+  

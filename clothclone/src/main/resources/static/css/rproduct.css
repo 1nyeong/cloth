@@ -11,17 +11,28 @@
 .main{
     margin: 0px;
     padding: 0px;
-
+    margin-top: 30px;
     padding-left: 80px;
     justify-content: center;
 }
-
 
 
 .product_container{
     display: flex;
     justify-content: space-between;
 }
+
+
+
+.product-images img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    padding-bottom: 10px;
+}
+
+
+
 
 .product-images {
     display: flex;
@@ -33,24 +44,18 @@
     
 }
 
-.product-images img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 .product_view{
     position: sticky;
-    top: 25%;
+    top: 15%;
     right: 50px;
+    box-sizing: auto;
+
     margin-top: 10px;
     margin-bottom: 30px;
     padding: 0px 15px;
     width: 400px;
     height: 600px;
 }
-
-
 
 .product-title {
     margin: 0px 0px 27px;
