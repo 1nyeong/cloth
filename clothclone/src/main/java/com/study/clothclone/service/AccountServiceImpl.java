@@ -4,7 +4,7 @@ import com.study.clothclone.domain.User;
 import com.study.clothclone.dto.RegisterReqDto;
 import com.study.clothclone.exception.CustomInternalServerErrorException;
 import com.study.clothclone.exception.CustomValidationException;
-import com.study.clothclone.security.repository.AccountRepository;
+import com.study.clothclone.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

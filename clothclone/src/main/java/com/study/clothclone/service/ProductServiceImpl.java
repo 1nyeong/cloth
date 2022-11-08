@@ -5,7 +5,7 @@ import com.study.clothclone.dto.CheckoutRespDto;
 import com.study.clothclone.dto.CollectionListRespDto;
 import com.study.clothclone.dto.ProductRespDto;
 import com.study.clothclone.exception.CustomValidationException;
-import com.study.clothclone.security.repository.ProductRepository;
+import com.study.clothclone.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

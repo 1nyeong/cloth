@@ -12,7 +12,7 @@ public class PageController {
     }
 
     @GetMapping("/notice")
-    public String cart(){
+    public String notice(){
         return "page/notice";
     }
 

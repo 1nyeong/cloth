@@ -120,7 +120,7 @@ class CollectionsService {
                 ${product.productPrice}원
             </div>
             <div class="product-simple">
-                ${product.simpleInfo}
+                ${product.productSimpleInfo}
             </div>
           </li>
           `;

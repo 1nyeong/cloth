@@ -1,10 +1,11 @@
 package com.study.clothclone.service.admin;
 
+import com.study.clothclone.domain.Product;
 import com.study.clothclone.domain.ProductImg;
 import com.study.clothclone.dto.admin.*;
 import com.study.clothclone.exception.CustomInternalServerErrorException;
 import com.study.clothclone.exception.CustomValidationException;
-import com.study.clothclone.security.repository.admin.ProductManagementRepository;
+import com.study.clothclone.repository.admin.ProductManagementRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;

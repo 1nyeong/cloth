@@ -1,10 +1,12 @@
 package com.study.clothclone.service;
 import com.study.clothclone.entity.Board;
-import com.study.clothclone.security.repository.BoardRepository;
+import com.study.clothclone.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class BoardService {
@@ -27,5 +29,9 @@ public class BoardService {
     public Board boardView(Integer id){
 
         return boardRepository.findById(id).get();
+    }
+
+    public void BoardDelete(Integer id){
+        boardRepository.deleteById(id);
     }
 }

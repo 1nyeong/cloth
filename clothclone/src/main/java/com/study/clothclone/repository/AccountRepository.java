@@ -1,4 +1,4 @@
-package com.study.clothclone.security.repository;
+package com.study.clothclone.repository;
 
 import com.study.clothclone.domain.User;
 import org.apache.ibatis.annotations.Mapper;

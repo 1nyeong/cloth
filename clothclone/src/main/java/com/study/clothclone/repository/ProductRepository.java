@@ -1,4 +1,4 @@
-package com.study.clothclone.security.repository;
+package com.study.clothclone.repository;
 
 import com.study.clothclone.domain.CollectionsProduct;
 import com.study.clothclone.domain.PaymentProduct;

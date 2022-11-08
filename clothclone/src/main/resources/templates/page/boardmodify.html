@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시글 상세 페이지</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/static/css/board.css">
     <link rel="stylesheet" href="/static/css/notice.css">
     <link rel="stylesheet" href="/static/css/leftbar.css">
     <link rel="stylesheet" href="/static/css/inner.css">
     <link rel="stylesheet" href="/static/css/post.css">
-    <link rel="stylesheet" href="/static/css/boardview.css">
 </head>
 <body>
     <div id="container">
@@ -60,34 +59,32 @@
                     <li class="post-subtitle">게시판</li>
                 </ul>
             </div>
-            <div class="bottom-bar">  
-                <table class="table-main">
+            <form th:action="@{/boardupdate/{id}(id=${board.id})}" method="post">
+                <div class="bottom-bar">  
+                    <table class="table-main">
+                        <h5>게시글 수정</h5> 
                     <tbody class="tbody-main">
                         <tr>
                             <th class="write"scope="row">이름 </th>
-                            <td th:text="${board.name}" class="board-name">
+                            <td> 
+                                <input name ="name" th:value="${board.name}"class="text-input" type="text"placeholder=" 이름을 입력하세요." required>
                             </td>
                         </tr>
                         <tr>
                             <th class="write"scope="row">옷 종류</th>
-                            <td th:text="${board.title}" class="board-title">
+                            <td>
+                                <input name ="title" th:value="${board.title}" class="text-input" type="text"placeholder=" 옷종류를 입력하세요." required>
                             </td>
                         </tr>
                         <tr>
                             <th class="write"scope="row">내용</th>
-                                <td th:text="${board.content}" class="board-content">
+                                <td><textarea name ="content" th:text="${board.content}"class="text-text"placeholder=" 내용을 입력하세요." required></textarea>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
-                <div class="buttons">
-                <button class="button-board" type="button"><a class="board-button"
-                    th:href="@{/boarddelete(id=${board.id})}">삭제</a></button>
-                    <button class="button-board" type="button"><a class="board-button"
-                        th:href="@{/boardmodify/{id}(id=${board.id})}">수정</a></button>
-                    </div>
-            </div>
-              
+                    </table>
+                    <button class="btn-a" type="submit">작성</button>
+                </div>
+            </form>
             <div class="inner">
                 <div class="binner">
                     <a href="#a" class="binner1">HOME</a>
@@ -108,5 +105,6 @@
             </div>
         </div>
     </div>
+    <script src="/static/js/board.js"></script>
 </body>
 </html>
