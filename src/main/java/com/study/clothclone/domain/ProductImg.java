@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductImg {
     private int id;
-    private int pdt_id;
+    private int pdt_Id;
     private String origin_name;
     private String save_name;
 }

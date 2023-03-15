@@ -1,6 +1,5 @@
 package com.study.clothclone.service.admin;
 
-import com.study.clothclone.domain.Product;
 import com.study.clothclone.domain.ProductImg;
 import com.study.clothclone.dto.admin.*;
 import com.study.clothclone.exception.CustomInternalServerErrorException;
@@ -8,9 +7,9 @@ import com.study.clothclone.exception.CustomValidationException;
 import com.study.clothclone.repository.admin.ProductManagementRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,7 +22,10 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 public class ProductManagementServiceImpl implements ProductManagementService {
-    private final ResourceLoader resourceLoader;
+
+    @Value("${file.path}")
+    private String filePath;
+
     private final ProductManagementRepository productManagementRepository;
 
     @Override
@@ -79,7 +81,6 @@ public class ProductManagementServiceImpl implements ProductManagementService {
         }
     }
 
-
     @Override
     public void registerImg(ProductImgReqDto productImgReqDto) throws Exception {
         log.info("pdtId >>> " + productImgReqDto.getPdtId());
@@ -93,38 +94,24 @@ public class ProductManagementServiceImpl implements ProductManagementService {
         List<ProductImg> productImgs = new ArrayList<ProductImg>();
 
         productImgReqDto.getFiles().forEach(file -> {
-            Resource resource = resourceLoader.getResource("classpath:static/upload/product");
-            String filePath = null;
-
-            try {
-                if(!resource.exists()){
-                    String tempPath = resourceLoader.getResource("classpath:static").getURI().toString();
-                    tempPath = tempPath.substring(tempPath.indexOf("/") + 1);
-
-                    File f = new File(tempPath + "/upload/product");
-                    f.mkdirs();
-                }
-                filePath = resource.getURI().toString();
-
-                filePath = filePath.substring(filePath.indexOf("/") + 1);
-                System.out.println(filePath);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
             String originName = file.getOriginalFilename();
             String extension = originName.substring(originName.lastIndexOf("."));
             String saveName = UUID.randomUUID().toString().replaceAll("-", "") + extension;
 
-            Path path = Paths.get(filePath + "/" + saveName);
+            Path uploadPath = Paths.get(filePath + "product/" + saveName);
 
+            File f = new File(filePath + "product");
+            if (!f.exists()){
+                f.mkdir();
+            }
             try {
-                Files.write(path, file.getBytes());
-            } catch (IOException e) {
-                throw new CustomInternalServerErrorException(e.getMessage());
+                Files.write(uploadPath, file.getBytes());
+            }catch (IOException e){
+                throw new RuntimeException(e);
             }
 
             productImgs.add(ProductImg.builder()
-                    .pdt_id(productImgReqDto.getPdtId())
+                    .pdt_Id(productImgReqDto.getPdtId())
                     .origin_name(originName)
                     .save_name(saveName)
                     .build());
