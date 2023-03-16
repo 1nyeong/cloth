@@ -110,7 +110,7 @@ class CollectionsService {
           collectionProducts.innerHTML += `
           <li class="collection-product">
             <div class="product-img">
-                <img src="/static/upload/product/${product.mainImg}">
+                <img src="/image/product/${product.mainImg}">
             </div>
               <hr class="product-hr">
             <div class="product-name">

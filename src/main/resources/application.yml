@@ -45,4 +45,4 @@ mybatis:
     - /mappers/*.xml
 
 file:
-  path: C:/clothclone/upload/
+  path: C:/cloth/upload/

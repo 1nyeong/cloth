@@ -47,7 +47,7 @@ class ProductDetail {
         responseData.pdtImgs.forEach(img => {
             productImages.innerHTML += `
                 <div class="product-image">
-                    <img src="/static/upload/product/${img}">
+                    <img src="/image/product/${img}">
                 </div>
             `;
         });
