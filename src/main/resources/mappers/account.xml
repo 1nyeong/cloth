@@ -80,12 +80,12 @@
 
     <update id="updateProvider" parameterType="com.study.clothclone.domain.User">
         update
-        user_mst
+            user_mst
         set
-        provider = ${provider},
-        update_date = now()
+            provider = #{provider},
+            update_date = now()
         where
-        id = #{id}
+            id = #{id}
     </update>
 
 

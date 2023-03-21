@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-    @GetMapping("/all")
+    @GetMapping({"", "/all"})
     public String page(){
         return "page/collections_scroll";
     }
@@ -15,8 +15,5 @@ public class PageController {
     public String notice(){
         return "page/notice";
     }
-
-
-
-
+    
 }
