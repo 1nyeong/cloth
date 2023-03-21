@@ -35,7 +35,8 @@ public class AccountServiceImpl implements AccountService {
         // 회원가입 진행
         User user = registerReqDto.toEntity();
         int result = accountRepository.saveUser(user);
-        if (result == 0) {
+        int result2 = accountRepository.saveRole(user);
+        if (result == 0 && result2 == 0) {
             throw new CustomInternalServerErrorException("회원가입 중 문제가 발생하였습니다");
         }
     }

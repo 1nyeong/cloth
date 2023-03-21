@@ -5,12 +5,6 @@
 
 
 <mapper namespace="com.study.clothclone.repository.AccountRepository">
-    <resultMap id="role" type="com.study.clothclone.domain.Role">
-        <result property="id" column="id"/>
-        <result property="name" column="role_name"/>
-        <result property="create_date" column="create_date"/>
-        <result property="update_date" column="update_date"/>
-    </resultMap>
 
     <resultMap id="user" type="com.study.clothclone.domain.User">
         <result property="id" column="id"/>
@@ -24,6 +18,23 @@
         <collection property="role" resultMap="role"/>
     </resultMap>
 
+    <resultMap id="roleDtl" type="com.study.clothclone.domain.RoleDtl">
+        <result property="roleDtlId" column="role_dtl_id"></result>
+        <result property="email" column="email"></result>
+        <result property="roleId" column="role_id"></result>
+        <result property="createDate" column="create_date"></result>
+        <result property="updateDate" column="update_date"></result>
+        <collection property="role" resultMap="role"></collection>
+    </resultMap>
+
+    <resultMap id="role" type="com.study.clothclone.domain.Role">
+        <result property="id" column="id"/>
+        <result property="name" column="role_name"/>
+        <result property="create_date" column="create_date"/>
+        <result property="update_date" column="update_date"/>
+    </resultMap>
+
+
 
     <select id="findUserByEmail" parameterType="String" resultMap="user">
         select
@@ -33,11 +44,13 @@
             um.name,
             um.provider,
             um.role_id,
+            rd.role_id,
             rm.name as role_name,
             um.create_date,
             um.update_date
         from
             user_mst um
+            left outer join role_dtl rd on(rd.email = um.id)
             left outer join role_mst rm on(rm.id = um.role_id)
         where
             um.email = #{email}
@@ -57,6 +70,11 @@
             now(),
             now()
         )
+    </insert>
+
+    <insert id="saveRole" parameterType="com.study.clothclone.domain.User">
+        insert into role_dtl
+        values (0, #{email}, 1, now(), now())
     </insert>
 
 

@@ -40,8 +40,8 @@ public class AccountApi {
     @GetMapping("/principal")
     public ResponseEntity<CMRespDto<? extends PrincipalDetails>> getPrincipalDetails(@AuthenticationPrincipal PrincipalDetails principalDetails) {
         if(principalDetails != null) {
-            principalDetails.getAuthorities().forEach(role -> {
-                log.info("로그인된 사용자의 권한: {}", role.getAuthority());
+            principalDetails.getAuthorities().forEach(user -> {
+                log.info("로그인된 사용자의 권한: {}", user.getAuthority());
             });
         }
 
