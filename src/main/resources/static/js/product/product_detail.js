@@ -1,5 +1,6 @@
 window.onload = () => {
     LeftbarService.getInstance().loadLeftbar();
+
     
     new ProductDetail();
 }       
@@ -12,7 +13,7 @@ class ProductApi {
         }
         return this.#instance;
     }
-
+        
     getProductData() {
         let responseData = null;
         const url = location.href;
@@ -33,6 +34,44 @@ class ProductApi {
 
         return responseData;
 
+    }
+
+    setLike(pdtId) {
+        let likeCount = -1;
+        
+        $.ajax({
+            async: false,
+            type: "post",
+            url: `http://localhost:8000/api/product/${pdtId}/like`,
+            dataType: "json",
+            success: response => {
+                likeCount = response.data;
+            },
+            error: error => {
+                console.log(error);
+            }
+        });
+
+        return likeCount;
+    }
+
+    setDisLike(pdtId) {
+        let likeCount = -1;
+        
+        $.ajax({
+            async: false,
+            type: "delete",
+            url: `http://localhost:8000/api/product/${bookId}/like`,
+            dataType: "json",
+            success: response => {
+                likeCount = response.data;
+            },
+            error: error => {
+                console.log(error);
+            }
+        });
+
+        return likeCount;
     }
 }
 
@@ -103,6 +142,46 @@ ${responseData.pdtDetailInfo}`;
         productColors.onchange = () => {
             this.loadProductSizes(responseData);
         }
+    }
+
+}
+
+class ComponentEvent {
+    static #instance = null;
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new ComponentEvent();
+        }
+        return this.#instance;
+    }
+
+    addClickEventLikeButtons() {
+        const likeButtons = document.querySelectorAll(".like-buttons");
+        const pdtIds = document.querySelectorAll(".btn2");
+        const likeCounts = document.querySelectorAll(".like-count");
+
+        likeButtons.forEach((button, index) => {
+            button.onclick = () => {
+                if(button.classList.contains("like-button")){
+                    const likeCount = ProductApi.getInstance().setLike(pdtIds[index].value);
+                    if(likeCount != -1){
+                        likeCounts[index].textContent = likeCount;
+                        button.classList.remove("like-button");
+                        button.classList.add("dislike-button");
+                        button.textContent = "♥";
+                    }
+                    
+                }else {
+                    const likeCount = ProductApi.getInstance().setDisLike(pdtIds[index].value);
+                    if(likeCount != -1){
+                        likeCounts[index].textContent = likeCount;
+                        button.classList.remove("dislike-button");
+                        button.classList.add("like-button");
+                        button.textContent = "♥";
+                    }
+                }
+            }
+        });
     }
 
 }
