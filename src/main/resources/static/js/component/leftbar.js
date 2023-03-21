@@ -24,8 +24,8 @@ class LeftbarService {
                         <a href="/boardlist" class="boardlist">Q&A</a>
                     `
                     : `
-                    <a href="mypage" class="mypage">${user.name}</a>
-                    <a href="login" class="login">LOGOUT</a>
+                    <a href="mypage" class="mypage">${principal.user.name}</a>
+                    <a href="logout" class="logout">LOGOUT</a>
                     <a href="/notice" class="leftbar-notice">NOTICE</a>
                     <a href="/boardlist" class="boardlist">Q&A</a>
                     `
