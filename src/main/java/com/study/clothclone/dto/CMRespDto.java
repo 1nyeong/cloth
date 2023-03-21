@@ -6,7 +6,7 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class CMRespDto<T> {
-    private int code;
+//    private int code;
     private String message;
     private T data;
 }

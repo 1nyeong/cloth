@@ -1,3 +1,10 @@
+window.onload = () => {
+    LeftbarService.getInstance().loadLeftbar();
+    
+    CollectionsService.getInstance().loadCollections();
+    PageScroll.getInstance().addScrollPagingEvent();
+  }
+
 class CollectionsApi {
   static #instance = null;
 
@@ -140,9 +147,4 @@ class CollectionsService {
 
   }
 
-}
-
-window.onload = () => {
-  CollectionsService.getInstance().loadCollections();
-  PageScroll.getInstance().addScrollPagingEvent();
 }

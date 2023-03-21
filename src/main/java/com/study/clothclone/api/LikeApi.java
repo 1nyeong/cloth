@@ -4,7 +4,6 @@ import com.study.clothclone.dto.CMRespDto;
 import com.study.clothclone.security.PrincipalDetails;
 import com.study.clothclone.service.LikeService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +21,7 @@ public class LikeApi {
 
         int likeCount = likeService.like(pdtId, principalDetails.getUser().getId());
 
-        return ResponseEntity.ok().body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", likeCount));
+        return ResponseEntity.ok().body(new CMRespDto<>("Successfully", likeCount));
     }
 
     @DeleteMapping("/product/{pdtId}/like")
@@ -31,7 +30,7 @@ public class LikeApi {
 
         int likeCount = likeService.like(pdtId, principalDetails.getUser().getId());
 
-        return ResponseEntity.ok().body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", likeCount));
+        return ResponseEntity.ok().body(new CMRespDto<>("Successfully", likeCount));
     }
 
 }

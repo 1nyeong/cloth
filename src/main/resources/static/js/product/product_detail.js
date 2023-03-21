@@ -1,3 +1,9 @@
+window.onload = () => {
+    LeftbarService.getInstance().loadLeftbar();
+    
+    new ProductDetail();
+}       
+
 class ProductApi {
     static #instance = null;
     static getInstance() {
@@ -100,7 +106,3 @@ ${responseData.pdtDetailInfo}`;
     }
 
 }
-
-window.onload = () => {
-    new ProductDetail();
-}       
