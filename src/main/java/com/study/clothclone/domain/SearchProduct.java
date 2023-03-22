@@ -8,5 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class SearchProduct {
-
+    private int id;
+    private String pdt_name;
+    private int pdt_price;
+    private String saveName;
 }
