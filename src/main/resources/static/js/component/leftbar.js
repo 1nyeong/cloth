@@ -30,8 +30,8 @@ class LeftbarService {
                 }
             </div>
             <div class="search-container">
-                <input type="text" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" class="search-input">
+                <button type="button" class="search-button"><i class="fa fa-search"></i></button>
             </div>
             <div class="main_menu">
                 <ul>

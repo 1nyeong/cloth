@@ -145,7 +145,7 @@ ${responseData.pdtDetailInfo}`;
     }
 
     loadProductLike(responseData){
-        const principal = ProductApi.getInstance().getPrincipal();
+        const principal = PrincipalApi.getInstance().getPrincipal();
 
         const _likeButtons = document.querySelectorAll(".btns");
         const likeButtonsLength = _likeButtons == null ? 0 : _likeButtons.length;

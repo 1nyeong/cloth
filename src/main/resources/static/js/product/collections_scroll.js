@@ -3,7 +3,67 @@ window.onload = () => {
     
     CollectionsService.getInstance().loadCollections();
     PageScroll.getInstance().addScrollPagingEvent();
-  }
+    
+    ComponentEvent.getInstance().addClickEventSearchButton();
+
+    SearchService.getInstance().onLoadSearch();
+}
+
+const searchObj = {
+    page: 1,
+    searchValue: null
+}
+
+class SearchApi {
+    static #instance = null;
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new SearchApi();
+        }
+        return this.#instance;
+    }
+
+    getTotalCount() {
+        let responseData = null;
+
+        $.ajax({
+            async: false,
+            type: "get",
+            url: "http://localhost:8000/api/search/totalcount",
+            data: searchObj,
+            dataType: "json",
+            success: response => {
+                responseData = response.data;
+            },
+            error: error => {
+                console.log(error);
+            }
+        })
+
+        return responseData;
+    }
+
+
+    searchProduct() {
+        let responseData = null;
+
+        $.ajax({
+            async: false,
+            type: "get",
+            url: "http://localhost:8000/api/search",
+            data: searchObj,
+            dataType: "json",
+            success: response => {
+                responseData = response.data;
+            },
+            error: error => {
+                console.log(error);
+            }
+        })
+        return responseData
+    }
+}
+
 
 class CollectionsApi {
   static #instance = null;
@@ -115,21 +175,21 @@ class CollectionsService {
       responseData.forEach(product => {
           this.pdtIdList.push(product.productId);
           collectionProducts.innerHTML += `
-          <li class="collection-product">
-            <div class="product-img">
-                <img src="/image/product/${product.mainImg}">
-            </div>
-              <hr class="product-hr">
-            <div class="product-name">
-                ${product.productName}
-            </div>
-            <div class="product-price">
-                ${product.productPrice}원
-            </div>
-            <div class="product-simple">
-                ${product.productSimpleInfo}
-            </div>
-          </li>
+            <li class="collection-product">
+                <div class="product-img">
+                    <img src="/image/product/${product.mainImg}">
+                </div>
+                <hr class="product-hr">
+                <div class="product-name">
+                    ${product.productName}
+                </div>
+                <div class="product-price">
+                    ${product.productPrice}원
+                </div>
+                <div class="product-simple">
+                    ${product.productSimpleInfo}
+                </div>
+            </li>
           `;
       });
 
@@ -147,4 +207,97 @@ class CollectionsService {
 
   }
 
+}
+
+class SearchService {
+    static #instance = null;
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new SearchService();
+        }
+        return this.#instance;
+    }
+
+    onLoadSearch() {
+        const URLSearch = new URLSearchParams(location.search);
+        if(URLSearch.has("searchValue")){
+            const searchValue = URLSearch.get("searchValue");
+            if(searchValue == "") {
+                return;
+            }
+            const searchInput = document.querySelector(".search-input");
+            searchInput.value = searchValue;
+            const searchButton = document.querySelector(".search-button");
+            searchButton.click();
+        }
+    }
+
+    loadSearchProduct() {
+        const responseData = SearchApi.getInstance().searchProduct();
+        const collectionProducts = document.querySelector(".collection-products");
+
+        console.log(responseData)
+        responseData.forEach(data => {
+            collectionProducts.innerHTML += `
+                <li class="collection-product">
+                    <input type="hidden" class="pdt-id" value="${data.id}">
+                    <div class="product-img">
+                        <img src="/image/product/${data.save_name}">
+                    </div>
+                    <hr class="product-hr">
+                    <div class="product-name">
+                        ${data.pdt_name}
+                    </div>
+                    <div class="product-price">
+                        ${data.pdt_price}원
+                    </div>
+                    <div class="product-simple">
+                        ${data.pdt_simple_info}
+                    </div>
+                </li>
+            `;
+        });
+
+        ComponentEvent.getInstance().addClickEventSearchProduct();
+    }
+
+    clearProductList() {
+        const collectionProducts = document.querySelector(".collection-products");
+        collectionProducts.innerHTML = "";
+    }
+
+}
+
+class ComponentEvent {
+    static #instance = null;
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new ComponentEvent();
+        }
+        return this.#instance;
+    }
+
+    addClickEventSearchProduct() {
+        const collectionProducts = document.querySelectorAll(".collection-product");
+    
+    
+    }
+
+    addClickEventSearchButton() {
+        const searchInput = document.querySelector(".search-input");
+        const searchButton = document.querySelector(".search-button");
+        searchButton.onclick = () => {
+            searchObj.searchValue = searchInput.value;
+            searchObj.page = 1;
+            window.scrollTo(0, 0);
+            SearchService.getInstance().clearProductList();
+            SearchService.getInstance().loadSearchProduct();
+        }
+
+        searchInput.onkeyup = () => {
+            if(window.event.keyCode == 13) {
+                searchButton.click();
+            }
+        }
+    }
 }
