@@ -29,7 +29,7 @@ class SearchApi {
         $.ajax({
             async: false,
             type: "get",
-            url: "http://localhost:8000/api/search/totalcount",
+            url: "/api/search/totalcount",
             data: searchObj,
             dataType: "json",
             success: response => {
@@ -50,7 +50,7 @@ class SearchApi {
         $.ajax({
             async: false,
             type: "get",
-            url: "http://localhost:8000/api/search",
+            url: "/api/search",
             data: searchObj,
             dataType: "json",
             success: response => {

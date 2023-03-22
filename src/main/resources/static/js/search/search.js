@@ -29,7 +29,7 @@ class SearchApi {
         $.ajax({
             async: false,
             type: "get",
-            url: "http://localhost:8000/api/search/totalcount",
+            url: "/api/search/totalcount",
             data: searchObj,
             dataType: "json",
             success: response => {
@@ -50,7 +50,7 @@ class SearchApi {
         $.ajax({
             async: false,
             type: "get",
-            url: "http://localhost:8000/api/search",
+            url: "/api/search",
             data: searchObj,
             dataType: "json",
             success: response => {
@@ -133,7 +133,7 @@ class ComponentEvent {
     //     const searchButton = document.querySelector(".search-button");
     //     const searchInput = document.querySelector(".search-input");
     //     searchButton.onclick = () => {
-    //         location.href = `http://localhost:8000/search?searchValue=${searchInput.value}`;
+    //         location.href = `/search?searchValue=${searchInput.value}`;
     //     }
 
     //     searchInput.onkeyup = () => {

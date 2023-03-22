@@ -41,7 +41,7 @@ class ProductApi {
         $.ajax({
             async: false,
             type: "post",
-            url: `http://localhost:8000/api/product/${pdtId}/like`,
+            url: `/api/product/${pdtId}/like`,
             dataType: "json",
             success: response => {
                 likeCount = response.data;
@@ -60,7 +60,7 @@ class ProductApi {
         $.ajax({
             async: false,
             type: "delete",
-            url: `http://localhost:8000/api/product/${pdtId}/like`,
+            url: `/api/product/${pdtId}/like`,
             dataType: "json",
             success: response => {
                 likeCount = response.data;
