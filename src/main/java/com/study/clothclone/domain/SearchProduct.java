@@ -11,5 +11,6 @@ public class SearchProduct {
     private int id;
     private String pdt_name;
     private int pdt_price;
-    private String saveName;
+    private String save_name;
+    private String pdt_simple_info;
 }

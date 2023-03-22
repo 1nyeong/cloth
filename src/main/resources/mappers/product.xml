@@ -43,64 +43,65 @@
             pdt_mst pm
             left outer join pdt_image_mst pim on(pim.pdt_id = pm.id)
             left outer join (   select count(*) product_total_count
-            from pdt_mst
-        where 1 = 1
-            <if test='category != "all"'>
-                and category_id = (select id from pdt_category_mst where category_name = #{category})
-            </if> ) pm_cnt on(1 = 1)
+                                from pdt_mst
+                                where
+                                1 = 1
+                                <if test='category != "all"'>
+                                    and category_id = (select id from pdt_category_mst where category_name = #{category})
+                                </if> ) pm_cnt on(1 = 1)
         where
         1 = 1
             <if test='category != "all"'>
                 and pm.category_id = (select id from pdt_category_mst where category_name = #{category})
             </if>
             group by
-            pm.id
+                pm.id
             limit #{index}, 16
 
     </select>
     <select id="getProduct" resultMap="getProductMst">
         SELECT
-        pm.id AS pdt_id,
-        pm.pdt_name,
-        pm.pdt_price,
-        pm.pdt_simple_info,
-        pm.pdt_detail_info,
-        pm.pdt_option_info,
-        pm.pdt_management_info,
-        pm.pdt_shipping_info,
-        pd.id AS pdt_dtl_id,
-        pd.size_id,
-        psm.size_name,
-        pd.pdt_color,
-        pd.pdt_stock,
-        pim.save_name
+            pm.id AS pdt_id,
+            pm.pdt_name,
+            pm.pdt_price,
+            pm.pdt_simple_info,
+            pm.pdt_detail_info,
+            pm.pdt_option_info,
+            pm.pdt_management_info,
+            pm.pdt_shipping_info,
+            pd.id AS pdt_dtl_id,
+            pd.size_id,
+            psm.size_name,
+            pd.pdt_color,
+            pd.pdt_stock,
+            pim.save_name
         FROM
-        pdt_mst pm
-        LEFT OUTER JOIN pdt_dtl pd ON(pd.pdt_id = pm.id)
-        LEFT OUTER JOIN pdt_size_dtl psd ON(psd.id = pd.size_id)
-        LEFT OUTER JOIN pdt_size_mst psm ON(psm.id = psd.size_id)
-        LEFT OUTER JOIN pdt_image_mst pim ON(pim.pdt_id = pm.id)
+            pdt_mst pm
+            LEFT OUTER JOIN pdt_dtl pd ON(pd.pdt_id = pm.id)
+            LEFT OUTER JOIN pdt_size_dtl psd ON(psd.id = pd.size_id)
+            LEFT OUTER JOIN pdt_size_mst psm ON(psm.id = psd.size_id)
+            LEFT OUTER JOIN pdt_image_mst pim ON(pim.pdt_id = pm.id)
         WHERE
-        pm.id = #{pdtId}
+            pm.id = #{pdtId}
     </select>
     <select id="getPaymentProduct" resultType="com.study.clothclone.domain.PaymentProduct">
         SELECT
-        pd.id AS pdt_dtl_id,
-        pd.pdt_id,
-        pm.pdt_name,
-        pm.pdt_price,
-        pd.pdt_color,
-        pd.size_id,
-        psm.size_name,
-        pim.save_name
+            pd.id AS pdt_dtl_id,
+            pd.pdt_id,
+            pm.pdt_name,
+            pm.pdt_price,
+            pd.pdt_color,
+            pd.size_id,
+            psm.size_name,
+            pim.save_name
         FROM
-        pdt_dtl pd
-        LEFT OUTER JOIN pdt_mst pm ON(pm.id = pd.pdt_id)
-        LEFT OUTER JOIN pdt_size_dtl psd ON(psd.id = pd.size_id)
-        LEFT OUTER JOIN pdt_size_mst psm ON(psm.id = psd.size_id)
-        LEFT OUTER JOIN pdt_image_mst pim ON(pim.pdt_id = pd.pdt_id)
+            pdt_dtl pd
+            LEFT OUTER JOIN pdt_mst pm ON(pm.id = pd.pdt_id)
+            LEFT OUTER JOIN pdt_size_dtl psd ON(psd.id = pd.size_id)
+            LEFT OUTER JOIN pdt_size_mst psm ON(psm.id = psd.size_id)
+            LEFT OUTER JOIN pdt_image_mst pim ON(pim.pdt_id = pd.pdt_id)
         WHERE
-        pd.id = #{pdtDtlId}
+            pd.id = #{pdtDtlId}
         LIMIT 1
 
     </select>
