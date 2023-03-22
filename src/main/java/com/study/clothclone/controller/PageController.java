@@ -15,5 +15,5 @@ public class PageController {
     public String notice(){
         return "page/notice";
     }
-    
+
 }

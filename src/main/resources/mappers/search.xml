@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.clothclone.repository.SearchRepository">
+
+    <select id="getUserSearchProductTotalCount"
+            parameterType="com.study.clothclone.dto.SearchProductReqDto"
+            resultType="Integer">
+        select
+            count(*)
+        from
+            pdt_mst
+        where
+        1 = 1
+        <if test="searchValue != null and searchValue != ''">
+            and (pdt_name like concat('%', #{searchValue} ,'%')
+            or	category_id like concat('%', #{searchValue} ,'%')
+            or	pdt_price like concat('%', #{searchValue} ,'%'))
+        </if>
+
+    </select>
+
+    <select id="userSearchProduct"
+            parameterType="com.study.clothclone.dto.SearchProductReqDto"
+            resultType="com.study.clothclone.domain.SearchProduct">
+        select
+            pm.id as pdtId,
+            pm.pdt_name as pdtName,
+            pm.pdt_price as pdtPrice,
+            pim.save_name as saveName,
+<!--            pl.like_id as likeId,-->
+<!--            lc.like_count as likeCount-->
+        from
+            pdt_mst pm
+            left outer join pdt_image_mst pim on(pim.pdt_id = pm.id)
+<!--            left outer join pdt_like pl-->
+<!--                on(pl.pdt_id = pm.pdt_id and pl.user_id = #{userId})-->
+<!--            left outer join (select-->
+<!--                                pdt_id,-->
+<!--                                count(pdt_id) as like_count-->
+<!--                            from-->
+<!--                                pdt_like-->
+<!--                            group by-->
+<!--                                pdt_id) lc on(lc.pdt_id = pm.pdt_id)-->
+        where
+        1 = 1
+        <if test="searchValue != null and searchValue != ''">
+            and (pm.pdt_name like concat('%', #{searchValue} ,'%')
+            or	pm.category_id like concat('%', #{searchValue} ,'%')
+            or	pm.pdt_price like concat('%', #{searchValue} ,'%'))
+        </if>
+
+        limit #{index}, #{count};
+    </select>
+
+</mapper>

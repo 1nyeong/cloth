@@ -1,7 +1,6 @@
 window.onload = () => {
     LeftbarService.getInstance().loadLeftbar();
 
-    
     new ProductDetail();
 }       
 
@@ -61,7 +60,7 @@ class ProductApi {
         $.ajax({
             async: false,
             type: "delete",
-            url: `http://localhost:8000/api/product/${bookId}/like`,
+            url: `http://localhost:8000/api/product/${pdtId}/like`,
             dataType: "json",
             success: response => {
                 likeCount = response.data;
@@ -83,6 +82,7 @@ class ProductDetail {
         this.loadProductDetail(responseData);
         this.loadProductColors(responseData);
         this.loadProductSizes(responseData);
+        this.loadProductLike(responseData);
     }
 
     loadProductImgs(responseData) {
@@ -144,6 +144,36 @@ ${responseData.pdtDetailInfo}`;
         }
     }
 
+    loadProductLike(responseData){
+        const principal = ProductApi.getInstance().getPrincipal();
+
+        const _likeButtons = document.querySelectorAll(".btns");
+        const likeButtonsLength = _likeButtons == null ? 0 : _likeButtons.length;
+
+        responseData.pdtLike.forEach((data, index) => {
+            const likeButtons = document.querySelectorAll(".btns");
+            if(principal == null){
+                likeButtons[likeButtonsLength + index].innerHTML = `
+                    <button type="submit" class="btn1">구매하기</button>
+                    <button type="submit" class="btn2" disabled>찜하기</button>
+                `
+            }else{
+                if(data.likeId != 0){
+                    likeButtons[likeButtonsLength + index].innerHTML = `
+                        <button type="submit" class="btn1">구매하기</button>
+                        <button type="submit" class="btn2 like-buttons dislike-button">찜 하기</button>
+                        
+                    `
+                }else{
+                    likeButtons[likeButtonsLength + index].innerHTML = `
+                        <button type="submit" class="btn1">구매하기</button>
+                        <button type="submit" class="btn2 like-buttons like-button">찜 취소하기</button>
+                    `
+                }
+            }
+        });
+    }
+
 }
 
 class ComponentEvent {
@@ -168,7 +198,9 @@ class ComponentEvent {
                         likeCounts[index].textContent = likeCount;
                         button.classList.remove("like-button");
                         button.classList.add("dislike-button");
-                        button.textContent = "♥";
+                        button.textContent.innerHTML = `
+                            <i class="bi bi-heart-fill"></i>
+                        `;
                     }
                     
                 }else {
@@ -177,7 +209,9 @@ class ComponentEvent {
                         likeCounts[index].textContent = likeCount;
                         button.classList.remove("dislike-button");
                         button.classList.add("like-button");
-                        button.textContent = "♥";
+                        button.textContent  = `
+                            <i class="bi bi-heart"></i>
+                        `;
                     }
                 }
             }
