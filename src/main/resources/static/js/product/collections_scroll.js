@@ -218,6 +218,18 @@ class SearchService {
         return this.#instance;
     }
 
+    pdtIdList = null;
+
+    collectionsEntity = {
+        page: 1,
+        totalCount: 0,
+        maxPage: 0
+    }
+  
+    constructor() {
+        this.pdtIdList = new Array();
+    }
+
     onLoadSearch() {
         const URLSearch = new URLSearchParams(location.search);
         if(URLSearch.has("searchValue")){
@@ -238,9 +250,9 @@ class SearchService {
 
         console.log(responseData)
         responseData.forEach(data => {
+            this.pdtIdList.push(data.id);
             collectionProducts.innerHTML += `
                 <li class="collection-product">
-                    <input type="hidden" class="pdt-id" value="${data.id}">
                     <div class="product-img">
                         <img src="/image/product/${data.save_name}">
                     </div>
@@ -258,7 +270,18 @@ class SearchService {
             `;
         });
 
-        ComponentEvent.getInstance().addClickEventSearchProduct();
+        this.addClickEventSearchProduct();
+    }
+
+    addClickEventSearchProduct() {
+        const collectionProducts = document.querySelectorAll(".collection-product");
+
+        collectionProducts.forEach((product, index) => {
+            product.onclick = () => {
+                location.href = "/product/" + this.pdtIdList[index];
+            }
+        });
+  
     }
 
     clearProductList() {
@@ -277,16 +300,12 @@ class ComponentEvent {
         return this.#instance;
     }
 
-    addClickEventSearchProduct() {
-        const collectionProducts = document.querySelectorAll(".collection-product");
-    
-    
-    }
-
     addClickEventSearchButton() {
         const searchInput = document.querySelector(".search-input");
         const searchButton = document.querySelector(".search-button");
+
         searchButton.onclick = () => {
+            location.href = `/search?searchValue=${searchInput.value}`;
             searchObj.searchValue = searchInput.value;
             searchObj.page = 1;
             window.scrollTo(0, 0);
