@@ -305,7 +305,6 @@ class ComponentEvent {
         const searchButton = document.querySelector(".search-button");
 
         searchButton.onclick = () => {
-            location.href = `/search?searchValue=${searchInput.value}`;
             searchObj.searchValue = searchInput.value;
             searchObj.page = 1;
             window.scrollTo(0, 0);
@@ -319,4 +318,6 @@ class ComponentEvent {
             }
         }
     }
+
+    
 }
